@@ -5,7 +5,7 @@ import { Laptop, Users, Presentation, MessageSquare, ArrowRight } from "lucide-r
 
 export default function LearningModes() {
   return (
-    <section className="py-24 px-6 bg-primary text-white overflow-hidden">
+    <section className="py-24 px-6 bg-primary-deep text-background-warm overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -25,7 +25,7 @@ export default function LearningModes() {
                 </div>
                 <div>
                   <h4 className="text-xl font-bold mb-2">Live Online Classes</h4>
-                  <p className="text-white/60 leading-relaxed">
+                  <p className="text-background-warm/60 leading-relaxed">
                     Interactive, real-time sessions with expert mentors from the comfort of your home. Perfect for global students.
                   </p>
                 </div>
@@ -37,8 +37,8 @@ export default function LearningModes() {
                 </div>
                 <div>
                   <h4 className="text-xl font-bold mb-2">Classroom Training</h4>
-                  <p className="text-white/60 leading-relaxed">
-                    High-tech classroom environment at our Mahindra World City center for focused, hands-on learning experiences.
+                  <p className="text-background-warm/60 leading-relaxed">
+                    High-tech classroom environment for focused, hands-on learning experiences.
                   </p>
                 </div>
               </div>
@@ -49,7 +49,7 @@ export default function LearningModes() {
                 </div>
                 <div>
                   <h4 className="text-xl font-bold mb-2">Interactive Sessions</h4>
-                  <p className="text-white/60 leading-relaxed">
+                  <p className="text-background-warm/60 leading-relaxed">
                     Personalized attention with small batch sizes to ensure every student masters the concepts effectively.
                   </p>
                 </div>

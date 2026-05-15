@@ -28,9 +28,9 @@ const benefits = [
 
 export default function Franchise() {
   return (
-    <section id="franchise" className="py-24 px-6 bg-gray-50 relative overflow-hidden">
+    <section id="franchise" className="py-24 px-6 bg-background-warm relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="bg-primary rounded-[3rem] overflow-hidden shadow-2xl">
+        <div className="bg-primary-deep rounded-[3rem] overflow-hidden shadow-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-5">
             <div className="lg:col-span-2 p-12 lg:p-16 flex flex-col justify-center">
               <motion.div
@@ -39,17 +39,17 @@ export default function Franchise() {
                 viewport={{ once: true }}
               >
                 <h2 className="text-accent font-bold tracking-widest uppercase text-sm mb-4">Partner With Us</h2>
-                <h3 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
+                <h3 className="text-4xl md:text-5xl font-bold text-background-warm mb-8 leading-tight">
                   Start Your Own <span className="text-accent">Learning Center</span>
                 </h3>
-                <p className="text-white/70 text-lg mb-10 leading-relaxed">
+                <p className="text-background-warm/70 text-lg mb-10 leading-relaxed">
                   Join a fast-growing premium educational brand. We provide complete support to help you build a successful academy in your location.
                 </p>
                 <motion.a
                   href="#contact"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center gap-2 bg-accent text-primary px-8 py-4 rounded-2xl font-bold text-lg shadow-xl shadow-accent/20 hover:bg-accent-hover transition-all"
+                  className="inline-flex items-center gap-2 bg-accent text-background-warm px-8 py-4 rounded-2xl font-bold text-lg shadow-xl shadow-accent/20 hover:bg-primary transition-all"
                 >
                   Franchise Inquiry
                   <ArrowRight size={20} />
@@ -57,7 +57,7 @@ export default function Franchise() {
               </motion.div>
             </div>
 
-            <div className="lg:col-span-3 bg-white/5 backdrop-blur-sm p-12 lg:p-16 border-l border-white/10">
+            <div className="lg:col-span-3 bg-white/5 backdrop-blur-sm p-12 lg:p-16 border-l border-background-warm/10">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
                 {benefits.map((benefit, index) => (
                   <motion.div
@@ -70,21 +70,21 @@ export default function Franchise() {
                     <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-4">
                       <benefit.icon className="text-accent" size={24} />
                     </div>
-                    <h4 className="text-xl font-bold text-white mb-2">{benefit.title}</h4>
-                    <p className="text-white/50 text-sm leading-relaxed">
+                    <h4 className="text-xl font-bold text-background-warm mb-2">{benefit.title}</h4>
+                    <p className="text-background-warm/50 text-sm leading-relaxed">
                       {benefit.description}
                     </p>
                   </motion.div>
                 ))}
               </div>
 
-              <div className="mt-12 pt-10 border-t border-white/10 flex items-center gap-6">
-                <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center text-primary shadow-lg shadow-accent/10">
+              <div className="mt-12 pt-10 border-t border-background-warm/10 flex items-center gap-6">
+                <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center text-background-warm shadow-lg shadow-accent/10">
                   <TrendingUp size={32} />
                 </div>
                 <div>
-                  <p className="text-white font-bold text-xl leading-tight">High ROI Business Model</p>
-                  <p className="text-white/40 text-sm">Low investment, high emotional and financial rewards.</p>
+                  <p className="text-background-warm font-bold text-xl leading-tight">High ROI Business Model</p>
+                  <p className="text-background-warm/40 text-sm">Low investment, high emotional and financial rewards.</p>
                 </div>
               </div>
             </div>

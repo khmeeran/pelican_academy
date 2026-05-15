@@ -28,7 +28,7 @@ export default function TeacherTraining() {
   ];
 
   return (
-    <section className="py-24 px-6 relative overflow-hidden bg-white">
+    <section className="py-24 px-6 relative overflow-hidden bg-background-warm/30">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <motion.h2 
@@ -44,12 +44,12 @@ export default function TeacherTraining() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold text-primary mb-6"
+            className="text-4xl md:text-5xl font-bold text-primary-deep mb-6"
           >
             Professional <span className="gradient-text">Teacher Training</span>
           </motion.h3>
           <p className="text-primary/60 max-w-2xl mx-auto text-lg">
-            We don't just teach students; we empower educators. Join our professional training programs to master the art of teaching.
+            We don&apos;t just teach students; we empower educators. Join our professional training programs to master the art of teaching.
           </p>
         </div>
 
@@ -61,12 +61,12 @@ export default function TeacherTraining() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="p-8 rounded-3xl bg-gray-50 border border-gray-100 hover:bg-primary hover:text-white transition-all duration-500 group"
+              className="p-8 rounded-3xl bg-background-warm border border-primary/5 hover:bg-primary hover:text-background-warm transition-all duration-500 group"
             >
-              <div className="w-14 h-14 rounded-2xl bg-primary text-accent flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-primary transition-all">
+              <div className="w-14 h-14 rounded-2xl bg-primary text-background-warm flex items-center justify-center mb-6 group-hover:bg-background-warm group-hover:text-primary transition-all">
                 <track.icon size={28} />
               </div>
-              <h4 className="text-xl font-bold mb-3">{track.title}</h4>
+              <h4 className="text-xl font-bold mb-3 text-primary-deep group-hover:text-background-warm">{track.title}</h4>
               <p className="opacity-60 text-sm leading-relaxed group-hover:opacity-80">
                 {track.description}
               </p>
@@ -80,7 +80,7 @@ export default function TeacherTraining() {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <a href="#contact" className="inline-flex items-center gap-2 text-primary font-bold text-lg hover:text-accent transition-colors">
+          <a href="#contact" className="inline-flex items-center gap-2 text-primary font-bold text-lg hover:text-primary-deep transition-colors">
             Become a Certified Educator <Award size={20} />
           </a>
         </motion.div>
