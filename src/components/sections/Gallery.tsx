@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Camera } from "lucide-react";
 
 const galleryImages = [
   { url: "/images/pexels-shootsaga-31447794.jpg", title: "Interactive Learning" },
@@ -17,58 +18,57 @@ const galleryImages = [
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="py-24 px-6 bg-background-warm/50">
+    <section id="gallery" className="section-spacing bg-primary/5">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+        <div className="text-center mb-20">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="text-primary font-bold tracking-widest uppercase text-sm mb-4"
+            className="inline-flex items-center gap-3 bg-primary/5 px-5 py-2.5 rounded-full mb-8"
           >
-            Visual Journey
-          </motion.h2>
+            <Camera size={18} className="text-primary" />
+            <span className="text-xs font-bold text-primary uppercase tracking-[0.2em]">Visual Journey</span>
+          </motion.div>
           <motion.h3 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold text-primary-deep mb-6"
+            className="text-5xl md:text-7xl font-poppins font-bold text-primary-deep mb-8"
           >
-            Our <span className="gradient-text">Academy Gallery</span>
+            Our <span className="text-accent italic font-medium">Academy Gallery</span>
           </motion.h3>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-primary/60 max-w-2xl mx-auto text-lg mb-12"
+            transition={{ delay: 0.1 }}
+            className="text-text-secondary max-w-2xl mx-auto text-lg font-inter mb-16"
           >
             A glimpse into the vibrant learning environment and creative milestones at Pelican Academy.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {galleryImages.map((image, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -10 }}
-              className="relative aspect-square rounded-[2.5rem] overflow-hidden group shadow-xl border border-primary/5 cursor-pointer"
+              transition={{ delay: index * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="relative aspect-square rounded-[3rem] overflow-hidden group shadow-2xl border border-primary/5 cursor-pointer"
             >
               <Image
                 src={image.url}
                 alt={image.title}
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                className="object-cover transition-transform duration-1000 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary-deep/90 via-primary-deep/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-10">
-                <div>
-                  <p className="text-accent font-bold text-xs uppercase tracking-widest mb-2 opacity-0 group-hover:opacity-100 transition-all delay-100">Gallery</p>
-                  <p className="text-background-warm font-bold text-2xl opacity-0 group-hover:opacity-100 transition-all delay-200">{image.title}</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-primary-deep/90 via-primary-deep/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end p-12">
+                <div className="transform translate-y-10 group-hover:translate-y-0 transition-transform duration-500">
+                  <p className="text-accent font-bold text-xs uppercase tracking-[0.3em] mb-3">Gallery</p>
+                  <p className="text-background-warm font-poppins font-bold text-3xl leading-tight">{image.title}</p>
                 </div>
               </div>
             </motion.div>

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Send, MessageCircle, CheckCircle2, AlertCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Send, MessageCircle, CheckCircle2, AlertCircle, ArrowRight } from "lucide-react";
 
 export default function Contact() {
   const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -33,184 +33,123 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 px-6 bg-background-warm">
+    <section id="contact" className="section-spacing bg-white">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-primary font-bold tracking-widest uppercase text-sm mb-4">Connect With Us</h2>
-            <h3 className="text-4xl md:text-5xl font-bold text-primary-deep mb-8 leading-tight">
-              Get in Touch for <span className="gradient-text">Inquiries & Admissions</span>
-            </h3>
-            
-            <div className="space-y-8 mb-12">
-              <div className="flex gap-6 items-start">
-                <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center shrink-0 shadow-sm border border-primary/10">
-                  <Phone className="text-primary" size={24} />
-                </div>
-                <div>
-                  <p className="text-sm font-bold text-primary/40 uppercase tracking-widest mb-1">Call/WhatsApp</p>
-                  <a href="tel:+919994048827" className="text-xl font-bold text-primary-deep hover:text-primary transition-colors">+91 9994048827</a>
-                </div>
-              </div>
-
-              <div className="flex gap-6 items-start">
-                <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center shrink-0 shadow-sm border border-primary/10">
-                  <MapPin className="text-primary" size={24} />
-                </div>
-                <div>
-                  <p className="text-sm font-bold text-primary/40 uppercase tracking-widest mb-1">Location</p>
-                  <p className="text-xl font-bold text-primary-deep">Near Parashakti Hospital, Singaperumalkoil, Chengalpattu</p>
-                  <a 
-                    href="https://maps.app.goo.gl/YourActualGoogleMapsLink" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-primary text-sm font-bold hover:underline mt-2 inline-block"
-                  >
-                    View on Google Maps →
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap gap-4 mb-12">
-              <a
-                href="https://wa.me/919994048827"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-[#25D366] text-white px-6 py-4 rounded-2xl font-bold shadow-lg shadow-green-500/20 hover:scale-105 transition-transform"
+        <div className="bg-primary-deep rounded-[4rem] overflow-hidden shadow-2xl relative">
+          {/* Background Highlight */}
+          <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_100%_0%,rgba(212,163,115,0.1),transparent_50%)]" />
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 relative z-10">
+            <div className="p-12 md:p-24 lg:p-32 flex flex-col justify-center">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
               >
-                <MessageCircle size={24} />
-                WhatsApp Us
-              </a>
-              <a
-                href="tel:+919994048827"
-                className="flex items-center gap-2 bg-primary text-background-warm px-6 py-4 rounded-2xl font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-transform"
-              >
-                <Phone size={24} />
-                Call Now
-              </a>
-            </div>
-
-            {/* Google Maps Embed */}
-            <div className="rounded-[2rem] overflow-hidden shadow-xl border border-primary/10 h-[300px] relative group">
-              <iframe
-                src="https://www.google.com/maps?q=Pelican+Academy,Singaperumalkoil,Chengalpattu,Tamil+Nadu&output=embed"
-                width="100%"
-                height="100%"
-                style={{ border: 0, filter: "grayscale(0.5) contrast(1.1) opacity(0.8)" }}
-                allowFullScreen={true}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
-              ></iframe>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="bg-white/50 backdrop-blur-sm p-10 rounded-[3rem] shadow-xl border border-primary/5 relative overflow-hidden"
-          >
-            {formStatus === "success" ? (
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="h-full flex flex-col items-center justify-center text-center space-y-4 py-12"
-              >
-                <div className="w-20 h-20 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-4">
-                  <CheckCircle2 size={48} />
+                <div className="inline-block bg-white/10 px-4 py-2 rounded-full mb-10 backdrop-blur-sm border border-white/10">
+                  <span className="text-xs font-bold text-accent uppercase tracking-[0.2em]">Admissions Open</span>
                 </div>
-                <h4 className="text-2xl font-bold text-primary-deep">Message Sent!</h4>
-                <p className="text-primary/60 max-w-xs">Thank you for your inquiry. Our team will get back to you shortly.</p>
-                <button 
-                  onClick={() => setFormStatus("idle")}
-                  className="text-primary font-bold hover:underline pt-4"
-                >
-                  Send another message
-                </button>
+                <h2 className="text-6xl md:text-7xl font-poppins font-bold text-white mb-10 leading-tight">
+                  Secure Your Child&apos;s <br />
+                  <span className="text-accent italic font-medium">Future Today</span>
+                </h2>
+                <p className="text-xl text-white/70 leading-relaxed mb-16 font-inter max-w-lg">
+                  Join a community of forward-thinking parents and brilliant young minds. This is the school parents aspire to join.
+                </p>
+
+                <div className="space-y-10">
+                  <div className="flex gap-8 items-start">
+                    <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-accent shrink-0 border border-white/10">
+                      <Phone size={28} />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-white/40 uppercase tracking-[0.2em] mb-2">Direct Inquiry</p>
+                      <a href="tel:+919994048827" className="text-2xl font-bold text-white hover:text-accent transition-colors">+91 9994048827</a>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-8 items-start">
+                    <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-accent shrink-0 border border-white/10">
+                      <MapPin size={28} />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-white/40 uppercase tracking-[0.2em] mb-2">Our Campus</p>
+                      <p className="text-2xl font-bold text-white leading-tight">Singaperumalkoil, <br />Chengalpattu</p>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <input type="hidden" name="_subject" value="New Inquiry from Pelican Academy Website" />
-                
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-primary/60 ml-1">Full Name</label>
-                    <input
-                      type="text"
-                      name="name"
-                      required
-                      placeholder="John Doe"
-                      className="w-full px-6 py-4 rounded-2xl bg-background-warm border border-primary/10 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-primary/60 ml-1">Phone Number</label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      required
-                      placeholder="+91 00000 00000"
-                      className="w-full px-6 py-4 rounded-2xl bg-background-warm border border-primary/10 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all"
-                    />
-                  </div>
-                </div>
+            </div>
 
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-primary/60 ml-1">Inquiry Type</label>
-                  <select
-                    name="type"
-                    className="w-full px-6 py-4 rounded-2xl bg-background-warm border border-primary/10 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all appearance-none"
-                  >
-                    <option>Course Admission</option>
-                    <option>Franchise Inquiry</option>
-                    <option>Teacher Training</option>
-                    <option>General Inquiry</option>
-                  </select>
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-primary/60 ml-1">Message</label>
-                  <textarea
-                    name="message"
-                    required
-                    rows={4}
-                    placeholder="How can we help you?"
-                    className="w-full px-6 py-4 rounded-2xl bg-background-warm border border-primary/10 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all resize-none"
-                  ></textarea>
-                </div>
-
-                {formStatus === "error" && (
-                  <div className="flex items-center gap-2 text-red-500 text-sm font-medium bg-red-50 p-4 rounded-xl">
-                    <AlertCircle size={18} />
-                    <span>Something went wrong. Please try again or call us directly.</span>
+            <div className="bg-background-warm p-12 md:p-24 lg:p-32 flex flex-col justify-center">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white p-10 md:p-16 rounded-[3rem] shadow-2xl border border-primary/5"
+              >
+                {formStatus === "success" ? (
+                  <div className="text-center py-12">
+                    <div className="w-24 h-24 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-8">
+                      <CheckCircle2 size={56} />
+                    </div>
+                    <h4 className="text-3xl font-poppins font-bold text-primary-deep mb-4">Application Received</h4>
+                    <p className="text-text-secondary text-lg mb-10">Our admissions officer will contact you within 24 hours.</p>
+                    <button onClick={() => setFormStatus("idle")} className="btn-primary">Send New Message</button>
                   </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-8">
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold text-primary-deep uppercase tracking-widest ml-1">Full Name</label>
+                      <input
+                        type="text"
+                        name="name"
+                        required
+                        placeholder="John Doe"
+                        className="w-full px-8 py-5 rounded-2xl bg-background-warm border border-primary/10 focus:border-accent focus:ring-4 focus:ring-accent/10 outline-none transition-all font-inter"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold text-primary-deep uppercase tracking-widest ml-1">Phone Number</label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        required
+                        placeholder="+91 00000 00000"
+                        className="w-full px-8 py-5 rounded-2xl bg-background-warm border border-primary/10 focus:border-accent focus:ring-4 focus:ring-accent/10 outline-none transition-all font-inter"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold text-primary-deep uppercase tracking-widest ml-1">Message</label>
+                      <textarea
+                        name="message"
+                        required
+                        rows={4}
+                        placeholder="How can we help you?"
+                        className="w-full px-8 py-5 rounded-2xl bg-background-warm border border-primary/10 focus:border-accent focus:ring-4 focus:ring-accent/10 outline-none transition-all resize-none font-inter"
+                      ></textarea>
+                    </div>
+
+                    {formStatus === "error" && (
+                      <div className="flex items-center gap-3 text-red-600 bg-red-50 p-5 rounded-2xl border border-red-100">
+                        <AlertCircle size={24} />
+                        <p className="font-bold text-sm">Please try again or contact us directly.</p>
+                      </div>
+                    )}
+
+                    <button
+                      type="submit"
+                      disabled={formStatus === "submitting"}
+                      className="btn-primary w-full py-6 text-xl flex items-center justify-center gap-4 group"
+                    >
+                      {formStatus === "submitting" ? "Processing..." : "Submit Application"}
+                      <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
+                    </button>
+                  </form>
                 )}
-
-                <button
-                  type="submit"
-                  disabled={formStatus === "submitting"}
-                  className="w-full bg-primary text-background-warm py-5 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 shadow-xl shadow-primary/20 hover:bg-primary-deep transition-all disabled:opacity-70 disabled:cursor-not-allowed"
-                >
-                  {formStatus === "submitting" ? (
-                    <span className="flex items-center gap-2">
-                      Sending... <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    </span>
-                  ) : (
-                    <>
-                      Send Inquiry
-                      <Send size={20} />
-                    </>
-                  )}
-                </button>
-              </form>
-            )}
-          </motion.div>
+              </motion.div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

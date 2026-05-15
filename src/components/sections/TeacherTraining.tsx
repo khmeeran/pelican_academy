@@ -1,89 +1,73 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Award, BookOpen, Heart, TrendingUp } from "lucide-react";
+import { GraduationCap, Award, Briefcase, ChevronRight } from "lucide-react";
+import Image from "next/image";
 
 export default function TeacherTraining() {
-  const tracks = [
-    {
-      title: "Career Opportunities",
-      description: "Join our network of expert educators and build a rewarding career.",
-      icon: TrendingUp
-    },
-    {
-      title: "Professional Certification",
-      description: "Get certified in modern teaching methodologies and specialized subjects.",
-      icon: Award
-    },
-    {
-      title: "Expert Mentorship",
-      description: "Learn from the best in the industry with personalized guidance.",
-      icon: Heart
-    },
-    {
-      title: "Skill Development",
-      description: "Continuous learning and upskilling programs for teachers.",
-      icon: BookOpen
-    }
-  ];
-
   return (
-    <section className="py-24 px-6 relative overflow-hidden bg-background-warm/30">
+    <section className="section-spacing bg-background-warm">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="text-primary font-bold tracking-widest uppercase text-sm mb-4"
           >
-            Empower Your Career
-          </motion.h2>
-          <motion.h3 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            <div className="inline-block bg-accent/10 px-4 py-2 rounded-full mb-6">
+              <span className="text-xs font-bold text-accent uppercase tracking-[0.2em]">Professional Growth</span>
+            </div>
+            <h2 className="text-5xl font-poppins font-bold text-primary-deep mb-8 leading-tight">
+              Empowering the <br />
+              <span className="text-primary">Next Generation of Educators</span>
+            </h2>
+            <p className="text-xl text-text-secondary leading-relaxed mb-12 font-inter">
+              Our world-class Teacher Training programs are designed for passionate individuals looking to master Abacus, Vedic Math, and Jolly Phonics. Gain a global certification and join our elite teaching network.
+            </p>
+
+            <div className="space-y-8 mb-12">
+              {[
+                { icon: Award, title: "Global Certification", desc: "Recognized standards across international education boards." },
+                { icon: Briefcase, title: "Career Support", desc: "100% placement assistance and business startup mentorship." }
+              ].map((item, i) => (
+                <div key={i} className="flex gap-6">
+                  <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-accent shrink-0 shadow-sm border border-accent/5">
+                    <item.icon size={28} />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-primary-deep mb-1">{item.title}</h4>
+                    <p className="text-text-secondary text-sm leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <a href="#contact" className="btn-primary inline-flex items-center gap-3">
+              Become a Certified Trainer
+              <ChevronRight size={20} />
+            </a>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold text-primary-deep mb-6"
+            className="relative"
           >
-            Professional <span className="gradient-text">Teacher Training</span>
-          </motion.h3>
-          <p className="text-primary/60 max-w-2xl mx-auto text-lg">
-            We don&apos;t just teach students; we empower educators. Join our professional training programs to master the art of teaching.
-          </p>
+            <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl border-[12px] border-white/50">
+              <Image
+                src="/images/pexels-tima-miroshnichenko-5427868.jpg"
+                alt="Teacher Training Session"
+                width={800}
+                height={1000}
+                className="object-cover aspect-[4/5]"
+              />
+              <div className="absolute inset-0 bg-primary-deep/20 mix-blend-multiply" />
+            </div>
+            <div className="absolute -top-10 -right-10 w-48 h-48 bg-accent/20 rounded-full blur-3xl" />
+            <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
+          </motion.div>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {tracks.map((track, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="p-8 rounded-3xl bg-background-warm border border-primary/5 hover:bg-primary hover:text-background-warm transition-all duration-500 group"
-            >
-              <div className="w-14 h-14 rounded-2xl bg-primary text-background-warm flex items-center justify-center mb-6 group-hover:bg-background-warm group-hover:text-primary transition-all">
-                <track.icon size={28} />
-              </div>
-              <h4 className="text-xl font-bold mb-3 text-primary-deep group-hover:text-background-warm">{track.title}</h4>
-              <p className="opacity-60 text-sm leading-relaxed group-hover:opacity-80">
-                {track.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
-
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-16 text-center"
-        >
-          <a href="#contact" className="inline-flex items-center gap-2 text-primary font-bold text-lg hover:text-primary-deep transition-colors">
-            Become a Certified Educator <Award size={20} />
-          </a>
-        </motion.div>
       </div>
     </section>
   );

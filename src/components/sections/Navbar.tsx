@@ -21,7 +21,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -30,13 +30,13 @@ export default function Navbar() {
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4",
-        scrolled ? "bg-white/80 backdrop-blur-md shadow-md py-3" : "bg-transparent"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-6 py-6",
+        scrolled ? "bg-primary shadow-xl py-4" : "bg-transparent"
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3">
-          <div className="relative w-12 h-12 overflow-hidden rounded-xl">
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="relative w-12 h-12 overflow-hidden rounded-xl border-2 border-accent/20 transition-transform duration-500 group-hover:scale-105">
             <Image
               src="/logo.jpeg"
               alt="Pelican Academy Logo"
@@ -45,34 +45,53 @@ export default function Navbar() {
             />
           </div>
           <div className="flex flex-col">
-            <span className="font-bold text-lg leading-tight tracking-tight text-primary-deep">PELICAN</span>
-            <span className="text-[10px] font-semibold tracking-widest text-primary/60 uppercase -mt-0.5">Academy</span>
+            <span className={cn(
+              "font-poppins font-bold text-xl leading-tight tracking-tight transition-colors duration-300",
+              scrolled ? "text-white" : "text-primary-deep"
+            )}>PELICAN</span>
+            <span className={cn(
+              "font-inter text-[10px] font-bold tracking-[0.2em] uppercase -mt-0.5 transition-colors duration-300",
+              scrolled ? "text-accent" : "text-primary/60"
+            )}>Academy</span>
           </div>
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-primary-deep/70 hover:text-primary transition-colors"
+              className={cn(
+                "relative text-sm font-bold uppercase tracking-widest transition-colors duration-300 group",
+                scrolled ? "text-white/80 hover:text-white" : "text-primary-deep/80 hover:text-primary"
+              )}
             >
               {link.name}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
           <a
             href="tel:+919994048827"
-            className="flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary-deep transition-all premium-shadow"
+            className={cn(
+              "flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold transition-all duration-300 shadow-lg hover:scale-105 active:scale-95",
+              scrolled ? "bg-accent text-primary-deep" : "bg-primary text-white"
+            )}
           >
             <Phone size={16} />
-            <span>Call Now</span>
+            <span>ENROLL NOW</span>
           </a>
         </div>
 
         {/* Mobile Toggle */}
-        <button className="md:hidden text-primary-deep" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X /> : <Menu />}
+        <button 
+          className={cn(
+            "md:hidden p-2 rounded-lg transition-colors",
+            scrolled ? "text-white" : "text-primary-deep"
+          )} 
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
@@ -80,29 +99,49 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background-warm absolute top-full left-0 right-0 border-t border-primary/10 shadow-xl overflow-hidden"
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            className="md:hidden fixed inset-0 z-[60] bg-primary text-white overflow-hidden"
           >
-            <div className="flex flex-col p-6 gap-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-lg font-medium text-primary-deep/80 hover:text-primary"
-                >
-                  {link.name}
-                </Link>
-              ))}
-              <a
-                href="tel:+919994048827"
-                className="flex items-center justify-center gap-2 bg-primary text-white px-5 py-3 rounded-xl text-base font-semibold"
+            <div className="flex flex-col h-full p-8 pt-24 gap-8">
+              <button 
+                className="absolute top-8 right-8 text-white/60 hover:text-white"
+                onClick={() => setIsOpen(false)}
               >
-                <Phone size={18} />
-                <span>Call Now</span>
-              </a>
+                <X size={32} />
+              </button>
+              {navLinks.map((link, index) => (
+                <motion.div
+                  key={link.name}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="text-4xl font-poppins font-bold hover:text-accent transition-colors block"
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
+              ))}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+                className="mt-auto"
+              >
+                <a
+                  href="tel:+919994048827"
+                  className="flex items-center justify-center gap-3 bg-accent text-primary-deep px-8 py-5 rounded-2xl text-xl font-bold shadow-2xl"
+                >
+                  <Phone size={24} />
+                  <span>Call Us Today</span>
+                </a>
+              </motion.div>
             </div>
           </motion.div>
         )}

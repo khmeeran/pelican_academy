@@ -1,69 +1,99 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import { Target, Heart, GraduationCap } from "lucide-react";
+import Image from "next/image";
+
+const values = [
+  {
+    title: "Our Mission",
+    description: "To cultivate cognitive excellence and emotional intelligence in every child through scientifically proven methods.",
+    icon: Target,
+  },
+  {
+    title: "Core Values",
+    description: "Integrity, curiosity, and disciplined creativity form the foundation of our educational philosophy.",
+    icon: Heart,
+  },
+  {
+    title: "Expert Pedagogy",
+    description: "Our certified educators employ international teaching standards to ensure holistic development.",
+    icon: GraduationCap,
+  }
+];
 
 export default function About() {
-  const points = [
-    "ISO 9001:2015 Certified",
-    "Expert Mentorship",
-    "Flexible Online & Offline Batches",
-    "Franchise Opportunities Available",
-    "Teacher Training Programs"
-  ];
-
   return (
-    <section id="about" className="py-24 px-6 bg-background-warm/50">
+    <section id="about" className="section-spacing bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 1 }}
             className="relative"
           >
-            <div className="rounded-3xl overflow-hidden shadow-xl">
-              <img
-                src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=1000"
-                alt="About Pelican Academy"
-                className="w-full h-full object-cover"
+            <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-background-warm">
+              <Image
+                src="/images/pexels-mary-taylor-5896479.jpg"
+                alt="Our Academy Environment"
+                width={800}
+                height={600}
+                className="object-cover aspect-[4/3]"
               />
             </div>
-            <div className="absolute -bottom-6 -right-6 bg-background-warm p-8 rounded-2xl shadow-xl max-w-xs hidden md:block border border-primary/10">
-              <p className="text-primary-deep font-bold text-lg mb-2">Our Mission</p>
-              <p className="text-primary/60 text-sm leading-relaxed">
-                To empower students through innovative learning methods and provide a world-class educational ecosystem.
-              </p>
-            </div>
+            {/* Decorative Element */}
+            <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-accent/10 rounded-full -z-0 blur-3xl" />
+            <div className="absolute -top-10 -left-10 w-40 h-40 border-4 border-primary/10 rounded-[3rem] -z-0" />
+            
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="absolute -bottom-6 -left-6 bg-primary p-8 rounded-[2rem] shadow-2xl z-20 hidden md:block"
+            >
+              <p className="text-4xl font-poppins font-bold text-background-warm mb-1">ISO</p>
+              <p className="text-xs font-bold text-accent tracking-[0.2em] uppercase">Certified Quality</p>
+            </motion.div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 1 }}
           >
-            <h2 className="text-primary font-bold tracking-widest uppercase text-sm mb-4">About Us</h2>
-            <h3 className="text-4xl md:text-5xl font-bold text-primary-deep mb-6 leading-tight">
-              A Legacy of Excellence in <span className="gradient-text">Modern Education</span>
-            </h3>
-            <p className="text-primary/70 text-lg mb-8 leading-relaxed">
-              Pelican Academy is an ISO 9001:2015 certified institution. We are dedicated to providing premium skill development and academic support through interactive and result-oriented teaching methodologies.
+            <div className="inline-block bg-primary/5 px-4 py-2 rounded-full mb-6">
+              <span className="text-xs font-bold text-primary uppercase tracking-[0.2em]">Established Excellence</span>
+            </div>
+            <h2 className="text-5xl font-poppins font-bold text-primary-deep mb-8 leading-tight">
+              Crafting a Legacy of <br />
+              <span className="text-accent italic font-medium">Empowered Minds</span>
+            </h2>
+            <p className="text-lg text-text-secondary leading-relaxed mb-10 font-inter">
+              Pelican Academy is more than just a tuition center. We are a sanctuary for skill development where traditional wisdom meets modern scientific techniques. Our Singaperumalkoil branch is committed to providing a world-class educational experience.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-              {points.map((point, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <CheckCircle2 className="text-accent shrink-0" size={20} />
-                  <span className="text-primary-deep/80 font-medium">{point}</span>
-                </div>
+            <div className="space-y-6">
+              {values.map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2 }}
+                  className="flex gap-6 items-start p-6 rounded-3xl transition-colors hover:bg-background-warm group"
+                >
+                  <div className="w-14 h-14 rounded-2xl bg-primary/5 flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                    <item.icon size={28} />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-primary-deep mb-2">{item.title}</h4>
+                    <p className="text-text-secondary text-sm leading-relaxed">{item.description}</p>
+                  </div>
+                </motion.div>
               ))}
-            </div>
-
-            <div className="bg-primary/5 p-6 rounded-2xl border border-primary/10">
-              <p className="text-primary-deep font-semibold mb-2 italic">&quot;Education is the passport to the future, for tomorrow belongs to those who prepare for it today.&quot;</p>
-              <p className="text-primary/60 text-sm font-bold">— Academy Director</p>
             </div>
           </motion.div>
         </div>

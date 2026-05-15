@@ -1,99 +1,80 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Briefcase, ShieldCheck, BookOpen, Users, TrendingUp, ArrowRight } from "lucide-react";
-
-const benefits = [
-  {
-    title: "Complete Training",
-    description: "End-to-end operational and academic training for center directors.",
-    icon: BookOpen
-  },
-  {
-    title: "Branding Support",
-    description: "Premium marketing materials and brand guidance to ensure success.",
-    icon: ShieldCheck
-  },
-  {
-    title: "Materials Support",
-    description: "Standardized curriculum, student kits, and instructional tools provided.",
-    icon: Briefcase
-  },
-  {
-    title: "Continuous Mentorship",
-    description: "Regular guidance and business support from our expert team.",
-    icon: Users
-  }
-];
+import { Landmark, TrendingUp, ShieldCheck, ArrowRight } from "lucide-react";
 
 export default function Franchise() {
   return (
-    <section id="franchise" className="py-24 px-6 bg-background-warm relative overflow-hidden">
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="bg-primary-deep rounded-[3rem] overflow-hidden shadow-2xl">
-          <div className="grid grid-cols-1 lg:grid-cols-5">
-            <div className="lg:col-span-2 p-12 lg:p-16 flex flex-col justify-center">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
-                <h2 className="text-accent font-bold tracking-widest uppercase text-sm mb-4">Partner With Us</h2>
-                <h3 className="text-4xl md:text-5xl font-bold text-background-warm mb-8 leading-tight">
-                  Start Your Own <span className="text-accent">Learning Center</span>
-                </h3>
-                <p className="text-background-warm/70 text-lg mb-10 leading-relaxed">
-                  Join a fast-growing premium educational brand. We provide complete support to help you build a successful academy in your location.
-                </p>
-                <motion.a
-                  href="#contact"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center gap-2 bg-accent text-background-warm px-8 py-4 rounded-2xl font-bold text-lg shadow-xl shadow-accent/20 hover:bg-primary transition-all"
-                >
-                  Franchise Inquiry
-                  <ArrowRight size={20} />
-                </motion.a>
-              </motion.div>
-            </div>
+    <section id="franchise" className="section-spacing bg-white">
+      <div className="max-w-7xl mx-auto">
+        <div className="bg-primary p-12 md:p-24 rounded-[3rem] shadow-2xl relative overflow-hidden">
+          {/* Decorative Pattern */}
+          <div className="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none">
+            <div className="absolute top-0 right-0 w-96 h-96 border-[40px] border-white rounded-full -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 border-[20px] border-accent rounded-full translate-y-1/2 -translate-x-1/2" />
+          </div>
 
-            <div className="lg:col-span-3 bg-white/5 backdrop-blur-sm p-12 lg:p-16 border-l border-background-warm/10">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
-                {benefits.map((benefit, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-4">
-                      <benefit.icon className="text-accent" size={24} />
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div>
+              <div className="inline-block bg-white/10 px-4 py-2 rounded-full mb-8 backdrop-blur-sm border border-white/20">
+                <span className="text-xs font-bold text-accent uppercase tracking-[0.2em]">Business Opportunity</span>
+              </div>
+              <h2 className="text-5xl md:text-6xl font-poppins font-bold text-white mb-8 leading-tight">
+                Start Your Own <br />
+                <span className="text-accent italic font-medium">Academy Legacy</span>
+              </h2>
+              <p className="text-xl text-white/80 leading-relaxed mb-12 font-inter">
+                Join the fastest-growing educational franchise network in India. We provide the curriculum, training, and brand power to help you succeed.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
+                {[
+                  { icon: TrendingUp, title: "High ROI", desc: "Low investment with sustainable growth." },
+                  { icon: ShieldCheck, title: "ISO Certified", desc: "Trusted systems and proven curriculum." }
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-accent shrink-0 backdrop-blur-sm">
+                      <item.icon size={24} />
                     </div>
-                    <h4 className="text-xl font-bold text-background-warm mb-2">{benefit.title}</h4>
-                    <p className="text-background-warm/50 text-sm leading-relaxed">
-                      {benefit.description}
-                    </p>
-                  </motion.div>
+                    <div>
+                      <h4 className="text-lg font-bold text-white mb-1">{item.title}</h4>
+                      <p className="text-white/60 text-xs leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
                 ))}
               </div>
 
-              <div className="mt-12 pt-10 border-t border-background-warm/10 flex items-center gap-6">
-                <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center text-background-warm shadow-lg shadow-accent/10">
-                  <TrendingUp size={32} />
+              <a href="#contact" className="bg-accent text-primary-deep px-10 py-5 rounded-2xl font-bold text-lg inline-flex items-center gap-3 hover:scale-105 active:scale-95 transition-all shadow-xl shadow-accent/20">
+                Request Franchise Prospectus
+                <ArrowRight size={20} />
+              </a>
+            </div>
+
+            <div className="hidden lg:grid grid-cols-2 gap-6">
+              <div className="space-y-6 pt-12">
+                <div className="bg-white/5 backdrop-blur-md p-10 rounded-[2.5rem] border border-white/10 text-center">
+                  <p className="text-4xl font-poppins font-bold text-accent mb-2">50+</p>
+                  <p className="text-white/60 text-xs font-bold uppercase tracking-widest">Centers</p>
                 </div>
-                <div>
-                  <p className="text-background-warm font-bold text-xl leading-tight">High ROI Business Model</p>
-                  <p className="text-background-warm/40 text-sm">Low investment, high emotional and financial rewards.</p>
+                <div className="bg-white/5 backdrop-blur-md p-10 rounded-[2.5rem] border border-white/10 text-center">
+                  <p className="text-4xl font-poppins font-bold text-white mb-2">ISO</p>
+                  <p className="text-accent text-xs font-bold uppercase tracking-widest">Standard</p>
+                </div>
+              </div>
+              <div className="space-y-6">
+                <div className="bg-white/10 backdrop-blur-md p-10 rounded-[2.5rem] border border-white/10 text-center">
+                  <p className="text-4xl font-poppins font-bold text-white mb-2">10k+</p>
+                  <p className="text-accent text-xs font-bold uppercase tracking-widest">Students</p>
+                </div>
+                <div className="bg-accent p-10 rounded-[2.5rem] text-center shadow-2xl">
+                  <p className="text-4xl font-poppins font-bold text-primary-deep mb-2">Award</p>
+                  <p className="text-primary-deep/60 text-xs font-bold uppercase tracking-widest">Winning</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Background decoration */}
-      <div className="absolute top-1/2 left-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
     </section>
   );
 }

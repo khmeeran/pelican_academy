@@ -1,110 +1,126 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, Phone, MapPin, Globe, Camera, MessageCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Instagram, MessageCircle, ArrowUpRight } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-primary-deep text-background-warm pt-20 pb-10 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-        <div className="col-span-1 md:col-span-1">
-          <Link href="/" className="flex items-center gap-3 mb-6">
-            <div className="relative w-12 h-12 overflow-hidden rounded-xl border-2 border-accent-gold/20">
-              <Image
-                src="/logo.jpeg"
-                alt="Pelican Academy Logo"
-                fill
-                className="object-cover"
-              />
+    <footer className="bg-primary-deep text-background-warm pt-32 pb-16 px-6 relative overflow-hidden">
+      {/* Decorative Gold Separator */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent opacity-30" />
+      
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 mb-24">
+          <div className="lg:col-span-1">
+            <Link href="/" className="flex items-center gap-4 mb-10 group">
+              <div className="relative w-14 h-14 overflow-hidden rounded-2xl border border-accent/30 bg-white/5 backdrop-blur-sm p-1">
+                <Image
+                  src="/logo.jpeg"
+                  alt="Pelican Academy Logo"
+                  fill
+                  className="object-cover rounded-xl"
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-poppins font-bold text-2xl leading-tight tracking-tight text-white group-hover:text-accent transition-colors">PELICAN</span>
+                <span className="font-inter text-[10px] font-bold tracking-[0.3em] text-accent uppercase -mt-0.5">Academy</span>
+              </div>
+            </Link>
+            <p className="text-white/60 text-lg leading-relaxed mb-10 font-inter max-w-xs">
+              An ISO 9001:2015 Certified Institution dedicated to crafting the future through disciplined excellence.
+            </p>
+            <div className="flex gap-5">
+              {[
+                { icon: Facebook, href: "https://www.facebook.com/pelicanacademychengalpattu", label: "Facebook" },
+                { icon: Instagram, href: "https://www.instagram.com/pelican_academy_chengalpattu", label: "Instagram" },
+                { icon: MessageCircle, href: "https://wa.me/919994048827", label: "WhatsApp" }
+              ].map((social, i) => (
+                <a 
+                  key={i}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center border border-white/10 hover:bg-accent hover:border-accent hover:text-primary-deep transition-all duration-300 shadow-lg shadow-black/20 group"
+                >
+                  <social.icon size={22} className="group-hover:scale-110 transition-transform" />
+                </a>
+              ))}
             </div>
-            <div className="flex flex-col text-background-warm">
-              <span className="font-bold text-lg leading-tight tracking-tight">PELICAN</span>
-              <span className="text-[10px] font-semibold tracking-widest opacity-60 uppercase -mt-0.5">Academy</span>
-            </div>
-          </Link>
-          <p className="text-background-warm/60 text-sm leading-relaxed mb-6">
-            An ISO 9001:2015 Certified Institution committed to empowering students through innovative learning methods in Chengalpattu.
-          </p>
-          <div className="flex gap-4">
-            <a 
-              href="https://www.facebook.com/pelicanacademychengalpattu" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-background-warm/10 flex items-center justify-center hover:bg-accent hover:text-primary-deep transition-all"
-              aria-label="Facebook"
-            >
-              <Globe size={18} />
-            </a>
-            <a 
-              href="https://www.instagram.com/pelican_academy_chengalpattu" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-background-warm/10 flex items-center justify-center hover:bg-accent hover:text-primary-deep transition-all"
-              aria-label="Instagram"
-            >
-              <Camera size={18} />
-            </a>
-            <a 
-              href="https://wa.me/919994048827" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-background-warm/10 flex items-center justify-center hover:bg-accent hover:text-primary-deep transition-all"
-              aria-label="WhatsApp"
-            >
-              <MessageCircle size={18} />
-            </a>
+          </div>
+
+          <div>
+            <h4 className="font-poppins font-bold text-xl mb-10 text-white flex items-center gap-3">
+              Quick Navigation
+              <span className="w-10 h-px bg-accent/30" />
+            </h4>
+            <ul className="space-y-5">
+              {[
+                { name: "About Academy", href: "/#about" },
+                { name: "Our Curriculum", href: "/#courses" },
+                { name: "Franchise Inquiry", href: "/#franchise" },
+                { name: "Academy Gallery", href: "/#gallery" },
+                { name: "Admissions", href: "/#contact" }
+              ].map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="text-white/50 hover:text-accent transition-colors text-lg font-inter flex items-center group">
+                    {link.name}
+                    <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 -translate-y-1 translate-x-1 transition-all" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-poppins font-bold text-xl mb-10 text-white flex items-center gap-3">
+              Our Expertise
+              <span className="w-10 h-px bg-accent/30" />
+            </h4>
+            <ul className="space-y-5 text-white/50 text-lg font-inter">
+              <li>3G Abacus Training</li>
+              <li>Vedic Mathematics</li>
+              <li>Synthetic Phonics</li>
+              <li>Calligraphy Arts</li>
+              <li>Teacher Training</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-poppins font-bold text-xl mb-10 text-white flex items-center gap-3">
+              Reach Us
+              <span className="w-10 h-px bg-accent/30" />
+            </h4>
+            <ul className="space-y-8 text-white/50 text-lg font-inter">
+              <li className="flex gap-4">
+                <MapPin size={22} className="text-accent shrink-0" />
+                <span className="leading-relaxed">Near Parashakti Hospital, <br />Singaperumalkoil, <br />TN 603204</span>
+              </li>
+              <li className="flex items-center gap-4">
+                <Phone size={22} className="text-accent shrink-0" />
+                <a href="tel:+919994048827" className="hover:text-accent transition-colors">+91 9994048827</a>
+              </li>
+              <li className="flex items-center gap-4">
+                <Mail size={22} className="text-accent shrink-0" />
+                <a href="mailto:pelicanacademy.21@gmail.com" className="hover:text-accent transition-colors text-sm">pelicanacademy.21@gmail.com</a>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div>
-          <h4 className="font-bold text-lg mb-6 text-accent">Quick Links</h4>
-          <ul className="space-y-4 text-background-warm/60 text-sm">
-            <li><Link href="/#about" className="hover:text-accent transition-colors">About Us</Link></li>
-            <li><Link href="/#courses" className="hover:text-accent transition-colors">Courses</Link></li>
-            <li><Link href="/#franchise" className="hover:text-accent transition-colors">Franchise</Link></li>
-            <li><Link href="/#gallery" className="hover:text-accent transition-colors">Gallery</Link></li>
-            <li><Link href="/#contact" className="hover:text-accent transition-colors">Contact</Link></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="font-bold text-lg mb-6 text-accent">Our Courses</h4>
-          <ul className="space-y-4 text-background-warm/60 text-sm">
-            <li>Abacus Training</li>
-            <li>Vedic Mathematics</li>
-            <li>Jolly Phonics</li>
-            <li>Handwriting & Calligraphy</li>
-            <li>English Grammar</li>
-            <li>Teacher Training</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="font-bold text-lg mb-6 text-accent">Contact Info</h4>
-          <ul className="space-y-4 text-background-warm/60 text-sm">
-            <li className="flex items-start gap-3">
-              <MapPin size={18} className="text-accent shrink-0" />
-              <span>Near Parashakti Hospital, Singaperumalkoil, Chengalpattu, TN 603204</span>
-            </li>
-            <li className="flex items-center gap-3">
-              <Phone size={18} className="text-accent shrink-0" />
-              <a href="tel:+919994048827" className="hover:text-accent transition-colors">+91 9994048827</a>
-            </li>
-            <li className="flex items-center gap-3">
-              <Mail size={18} className="text-accent shrink-0" />
-              <a href="mailto:pelicanacademy.21@gmail.com" className="hover:text-accent transition-colors">pelicanacademy.21@gmail.com</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div className="max-w-7xl mx-auto pt-8 border-t border-background-warm/10 flex flex-col md:flex-row items-center justify-between gap-4 text-background-warm/40 text-xs text-center md:text-left">
-        <p>© {currentYear} Pelican Academy. All rights reserved.</p>
-        <p>ISO 9001:2015 Certified Institution</p>
-        <div className="flex gap-6">
-          <Link href="/privacy" className="hover:text-background-warm transition-colors">Privacy Policy</Link>
-          <Link href="/terms" className="hover:text-background-warm transition-colors">Terms of Service</Link>
+        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8 text-white/30 text-sm font-inter">
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-10 text-center md:text-left">
+            <p>© {currentYear} Pelican Academy. All rights reserved.</p>
+            <p className="flex items-center gap-2">
+              <span className="w-1 h-1 rounded-full bg-accent" />
+              ISO 9001:2015 Certified
+            </p>
+          </div>
+          <div className="flex gap-10">
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
+          </div>
         </div>
       </div>
     </footer>

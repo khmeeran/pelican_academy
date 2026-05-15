@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Calculator, BookOpen, PenTool, Languages, Palette, 
-  GraduationCap, ChevronRight, X, CheckCircle2 
+  GraduationCap, ChevronRight, X, CheckCircle2, Star
 } from "lucide-react";
 
 const courses = [
@@ -33,7 +33,7 @@ const courses = [
     benefits: ["Early Reading Skills", "Accurate Spelling", "Correct Pronunciation", "Confidence in Literacy"],
     ageGroup: "4 - 7 Years",
     icon: BookOpen,
-    color: "bg-accent-gold/10 text-accent-gold"
+    color: "bg-accent-gold/10 text-accent"
   },
   {
     title: "English Grammar",
@@ -60,7 +60,7 @@ const courses = [
     benefits: ["Artistic Expression", "Focus & Patience", "Fine Motor Skills", "Decorative Projects"],
     ageGroup: "10+ Years",
     icon: Palette,
-    color: "bg-accent-gold/10 text-accent-gold"
+    color: "bg-accent-gold/10 text-accent"
   },
   {
     title: "Drawing & Art",
@@ -86,38 +86,39 @@ export default function Courses() {
   const [selectedCourse, setSelectedCourse] = useState<typeof courses[0] | null>(null);
 
   return (
-    <section id="courses" className="py-24 px-6 relative overflow-hidden bg-white/30">
+    <section id="courses" className="section-spacing bg-background-warm">
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-16">
-          <motion.h2 
+        <div className="text-center mb-20">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-primary font-bold tracking-widest uppercase text-sm mb-4"
+            className="inline-flex items-center gap-2 bg-primary/5 px-4 py-2 rounded-full mb-6"
           >
-            Our Programs
-          </motion.h2>
+            <Star size={14} className="text-accent fill-accent" />
+            <span className="text-xs font-bold text-primary uppercase tracking-[0.2em]">Our Curriculum</span>
+          </motion.div>
           <motion.h3 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold text-primary-deep mb-6"
+            className="text-5xl md:text-6xl font-poppins font-bold text-primary-deep mb-8"
           >
-            Explore Our <span className="gradient-text">Premium Courses</span>
+            Refined <span className="text-accent italic font-medium">Learning Programs</span>
           </motion.h3>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-primary/60 max-w-2xl mx-auto text-lg"
+            className="text-text-secondary max-w-2xl mx-auto text-lg font-inter"
           >
             Scientifically designed programs to enhance cognitive abilities, creativity, and academic excellence in young learners.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {courses.map((course, index) => (
             <motion.div
               key={index}
@@ -125,19 +126,18 @@ export default function Courses() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
-              whileHover={{ y: -10 }}
-              className="bg-background-warm p-8 rounded-[2rem] border border-primary/5 premium-shadow group transition-all duration-300 flex flex-col cursor-pointer"
               onClick={() => setSelectedCourse(course)}
+              className="premium-card p-10 flex flex-col cursor-pointer group"
             >
-              <div className={`w-14 h-14 rounded-2xl ${course.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                <course.icon size={28} />
+              <div className={`w-16 h-16 rounded-[1.5rem] ${course.color} flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500`}>
+                <course.icon size={32} />
               </div>
-              <h4 className="text-xl font-bold text-primary-deep mb-3">{course.title}</h4>
-              <p className="text-primary/60 text-sm leading-relaxed mb-6 flex-grow">
+              <h4 className="text-2xl font-poppins font-bold text-primary-deep mb-4 group-hover:text-primary transition-colors">{course.title}</h4>
+              <p className="text-text-secondary text-sm leading-relaxed mb-8 flex-grow font-inter">
                 {course.description}
               </p>
-              <div className="flex items-center gap-2 text-primary font-bold text-sm group-hover:text-primary-deep transition-colors">
-                Learn More <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              <div className="flex items-center gap-2 text-accent font-bold text-sm uppercase tracking-widest border-t border-primary/5 pt-6 group-hover:gap-3 transition-all">
+                Explore Details <ChevronRight size={18} />
               </div>
             </motion.div>
           ))}
@@ -153,60 +153,61 @@ export default function Courses() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedCourse(null)}
-              className="absolute inset-0 bg-primary-deep/40 backdrop-blur-md"
+              className="absolute inset-0 bg-primary-deep/60 backdrop-blur-md"
             />
             <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="bg-background-warm w-full max-w-2xl rounded-[3rem] p-8 md:p-12 shadow-2xl relative z-10 overflow-hidden"
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              className="bg-white w-full max-w-2xl rounded-[3rem] p-10 md:p-16 shadow-2xl relative z-10 overflow-hidden"
             >
               <button 
                 onClick={() => setSelectedCourse(null)}
-                className="absolute top-6 right-6 w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center text-primary hover:bg-primary/10 transition-colors"
+                className="absolute top-8 right-8 w-12 h-12 rounded-full bg-background-warm flex items-center justify-center text-primary-deep hover:bg-primary hover:text-white transition-all duration-300 shadow-sm"
               >
-                <X size={20} />
+                <X size={24} />
               </button>
 
-              <div className="flex items-center gap-4 mb-8">
-                <div className={`w-16 h-16 rounded-2xl ${selectedCourse.color} flex items-center justify-center`}>
-                  <selectedCourse.icon size={32} />
+              <div className="flex items-center gap-6 mb-10">
+                <div className={`w-20 h-20 rounded-[2rem] ${selectedCourse.color} flex items-center justify-center shadow-inner`}>
+                  <selectedCourse.icon size={40} />
                 </div>
                 <div>
-                  <h4 className="text-3xl font-bold text-primary-deep">{selectedCourse.title}</h4>
-                  <div className="bg-primary/5 px-3 py-1 rounded-full inline-block mt-1">
-                    <span className="text-xs font-bold text-primary uppercase tracking-widest">{selectedCourse.ageGroup}</span>
+                  <h4 className="text-4xl font-poppins font-bold text-primary-deep">{selectedCourse.title}</h4>
+                  <div className="bg-accent/10 px-4 py-1.5 rounded-full inline-block mt-2">
+                    <span className="text-xs font-bold text-accent uppercase tracking-[0.2em]">{selectedCourse.ageGroup}</span>
                   </div>
                 </div>
               </div>
 
-              <div className="space-y-8">
+              <div className="space-y-10">
                 <div>
-                  <h5 className="text-sm font-bold text-primary/40 uppercase tracking-widest mb-3">About the Course</h5>
-                  <p className="text-primary-deep/80 leading-relaxed text-lg">
+                  <h5 className="text-xs font-bold text-text-secondary uppercase tracking-[0.3em] mb-4">Curriculum Overview</h5>
+                  <p className="text-primary-deep/80 leading-relaxed text-xl font-inter">
                     {selectedCourse.details}
                   </p>
                 </div>
 
                 <div>
-                  <h5 className="text-sm font-bold text-primary/40 uppercase tracking-widest mb-4">Key Benefits</h5>
+                  <h5 className="text-xs font-bold text-text-secondary uppercase tracking-[0.3em] mb-6">Learning Outcomes</h5>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {selectedCourse.benefits.map((benefit, i) => (
-                      <div key={i} className="flex items-center gap-3 bg-white/50 p-4 rounded-2xl border border-primary/5">
-                        <CheckCircle2 size={18} className="text-accent shrink-0" />
-                        <span className="text-primary-deep font-semibold">{benefit}</span>
+                      <div key={i} className="flex items-center gap-4 bg-background-warm p-5 rounded-[1.5rem] border border-primary/5">
+                        <CheckCircle2 size={20} className="text-accent shrink-0" />
+                        <span className="text-primary-deep font-bold text-sm">{benefit}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="pt-4">
+                <div className="pt-6">
                   <a 
                     href="#contact" 
                     onClick={() => setSelectedCourse(null)}
-                    className="w-full bg-primary text-background-warm py-5 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 shadow-xl shadow-primary/20 hover:bg-primary-deep transition-all"
+                    className="btn-primary w-full flex items-center justify-center gap-3 text-lg"
                   >
-                    Inquire About This Course
+                    Request Enrollment Details
+                    <ChevronRight size={20} />
                   </a>
                 </div>
               </div>
@@ -215,9 +216,9 @@ export default function Courses() {
         )}
       </AnimatePresence>
 
-      {/* Decorative background circles */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-0 translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl -z-0 -translate-x-1/2 translate-y-1/2" />
+      {/* Scandinavian Background Shapes */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/50 rounded-full blur-3xl -z-0 translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 border border-primary/10 rounded-full -z-0 -translate-x-1/2 translate-y-1/2" />
     </section>
   );
 }
