@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
         <div className="col-span-1 md:col-span-1">
           <Link href="/" className="flex items-center gap-3 mb-6">
-            <div className="relative w-12 h-12 overflow-hidden rounded-xl">
+            <div className="relative w-12 h-12 overflow-hidden rounded-xl border-2 border-accent-gold/20">
               <Image
                 src="/logo.jpeg"
                 alt="Pelican Academy Logo"

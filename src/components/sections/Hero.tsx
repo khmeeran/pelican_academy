@@ -21,7 +21,7 @@ export default function Hero() {
           className="text-left"
         >
           <div className="inline-flex items-center gap-2 bg-primary/5 border border-primary/10 px-4 py-2 rounded-full mb-6">
-            <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+            <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
             <span className="text-xs font-bold text-primary uppercase tracking-widest">Admissions Open 2024-25</span>
           </div>
           

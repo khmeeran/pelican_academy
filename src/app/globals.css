@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #4F7C3A;
-  --color-primary-deep: #3E5F2D;
-  --color-accent: #6E9B52;
-  --color-accent-gold: #C5A059;
-  --color-background-warm: #F8F7F2;
-  --color-gray-elegant: #D9D9D9;
+  --color-primary: #1A365D; /* Deep Navy Blue (Authority & Trust) */
+  --color-primary-deep: #0F172A; /* Midnight Blue */
+  --color-accent: #4F7C3A; /* Nature Green (Growth - now an accent) */
+  --color-accent-gold: #D4AF37; /* Metallic Gold (Premium Excellence) */
+  --color-background-warm: #FDFCFB; /* Soft Cream / Off-white */
+  --color-gray-elegant: #64748B; /* Slate Gray */
   
   --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-slow: pulse-slow 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
@@ -23,8 +23,8 @@
 }
 
 :root {
-  --background: #F8F7F2;
-  --foreground: #3E5F2D;
+  --background: #FDFCFB;
+  --foreground: #1A365D;
 }
 
 body {
@@ -40,18 +40,18 @@ body {
 }
 
 .glass-card {
-  background: rgba(248, 247, 242, 0.8);
+  background: rgba(253, 252, 251, 0.8);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(79, 124, 58, 0.1);
+  border: 1px solid rgba(26, 54, 93, 0.1);
 }
 
 .gradient-text {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  background-image: linear-gradient(to right, #4F7C3A, #3E5F2D);
+  background-image: linear-gradient(to right, #1A365D, #4F7C3A);
 }
 
 .premium-shadow {
-  box-shadow: 0 10px 30px -10px rgba(62, 95, 45, 0.1);
+  box-shadow: 0 10px 30px -10px rgba(26, 54, 93, 0.1);
 }
