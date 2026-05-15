@@ -70,6 +70,7 @@ export default function RootLayout({
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+91-9994048827",
+      "email": "pelicanacademy.21@gmail.com",
       "contactType": "admissions",
       "areaServed": "IN",
       "availableLanguage": ["English", "Tamil"]

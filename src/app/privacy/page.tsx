@@ -28,7 +28,7 @@ export default function PrivacyPolicy() {
           </p>
           <h2 className="text-2xl font-bold text-primary-deep mt-8">Contact Us</h2>
           <p>
-            If you have any questions about this policy, please contact us at info@pelicanacademy.in.
+            If you have any questions about this policy, please contact us at pelicanacademy.21@gmail.com.
           </p>
         </div>
       </div>

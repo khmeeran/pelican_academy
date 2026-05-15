@@ -93,7 +93,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-3">
               <Mail size={18} className="text-accent shrink-0" />
-              <a href="mailto:info@pelicanacademy.in" className="hover:text-accent transition-colors">info@pelicanacademy.in</a>
+              <a href="mailto:pelicanacademy.21@gmail.com" className="hover:text-accent transition-colors">pelicanacademy.21@gmail.com</a>
             </li>
           </ul>
         </div>

@@ -13,7 +13,7 @@ export default function Contact() {
     
     const formData = new FormData(e.currentTarget);
     try {
-      const response = await fetch("https://formsubmit.co/ajax/919994048827", {
+      const response = await fetch("https://formsubmit.co/ajax/pelicanacademy.21@gmail.com", {
         method: "POST",
         body: formData,
         headers: {
