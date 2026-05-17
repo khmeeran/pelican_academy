@@ -1,5 +1,7 @@
 import Navbar from "@/components/sections/Navbar";
 import Hero from "@/components/sections/Hero";
+import Affiliations from "@/components/sections/Affiliations";
+import ServiceGrid from "@/components/sections/ServiceGrid";
 import About from "@/components/sections/About";
 import Courses from "@/components/sections/Courses";
 import LearningModes from "@/components/sections/LearningModes";
@@ -15,6 +17,8 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar />
       <Hero />
+      <Affiliations />
+      <ServiceGrid />
       <About />
       <Courses />
       <LearningModes />

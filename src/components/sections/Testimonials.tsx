@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { User, Quote } from "lucide-react";
+import { Quote } from "lucide-react";
 import Image from "next/image";
 
 const testimonials = [

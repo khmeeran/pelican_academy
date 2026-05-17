@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Send, MessageCircle, CheckCircle2, AlertCircle, ArrowRight } from "lucide-react";
+import { Phone, MapPin, CheckCircle2, AlertCircle, ArrowRight } from "lucide-react";
 
 export default function Contact() {
   const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -27,7 +27,7 @@ export default function Contact() {
       } else {
         setFormStatus("error");
       }
-    } catch (error) {
+    } catch {
       setFormStatus("error");
     }
   };
@@ -72,9 +72,25 @@ export default function Contact() {
                     <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-accent shrink-0 border border-white/10">
                       <MapPin size={28} />
                     </div>
-                    <div>
+                    <div className="flex-1">
                       <p className="text-xs font-bold text-white/40 uppercase tracking-[0.2em] mb-2">Our Campus</p>
-                      <p className="text-2xl font-bold text-white leading-tight">Singaperumalkoil, <br />Chengalpattu</p>
+                      <p className="text-2xl font-bold text-white leading-tight mb-8">Singaperumalkoil, <br />Chengalpattu</p>
+                      
+                      {/* Interactive Map Embed */}
+                      <div className="w-full h-64 rounded-3xl overflow-hidden border border-white/10 shadow-2xl group relative">
+                        <iframe
+                          src="https://maps.google.com/maps?q=Pelican%20Academy%20Singaperumalkoil&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                          width="100%"
+                          height="100%"
+                          style={{ border: 0, filter: 'grayscale(1) invert(0.9) contrast(1.2)' }}
+                          allowFullScreen={true}
+                          loading="lazy"
+                          referrerPolicy="no-referrer-when-downgrade"
+                          title="Pelican Academy Location"
+                          className="transition-all duration-700 group-hover:grayscale-0 group-hover:invert-0 group-hover:contrast-100"
+                        ></iframe>
+                        <div className="absolute inset-0 pointer-events-none border-[12px] border-primary-deep/50 rounded-3xl" />
+                      </div>
                     </div>
                   </div>
                 </div>

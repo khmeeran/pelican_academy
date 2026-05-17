@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GraduationCap, Award, Briefcase, ChevronRight, BookOpen, Users, Star, CheckCircle2 } from "lucide-react";
+import { Award, Briefcase, ChevronRight, BookOpen, Users, Star } from "lucide-react";
 import Image from "next/image";
 
 const trainingFeatures = [
@@ -98,7 +98,7 @@ export default function TeacherTraining() {
                   <p className="text-primary-deep font-bold font-poppins">Professional Excellence</p>
                 </div>
                 <p className="text-text-secondary text-sm font-inter leading-relaxed">
-                  "The training at Pelican Academy completely changed my teaching perspective. The Zero-Royalty model makes it the best choice for independent teachers."
+                  &quot;The training at Pelican Academy completely changed my teaching perspective. The Zero-Royalty model makes it the best choice for independent teachers.&quot;
                 </p>
               </div>
             </div>

@@ -1,24 +1,24 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Target, Heart, GraduationCap } from "lucide-react";
+import { Brain, Activity, Zap } from "lucide-react";
 import Image from "next/image";
 
 const values = [
   {
-    title: "Our Mission",
-    description: "To cultivate cognitive excellence and emotional intelligence in every child through scientifically proven methods.",
-    icon: Target,
+    title: "Whole Brain Development",
+    description: "Our program stimulates both the left (logical) and right (creative) hemispheres of the brain simultaneously.",
+    icon: Brain,
   },
   {
-    title: "Core Values",
-    description: "Integrity, curiosity, and disciplined creativity form the foundation of our educational philosophy.",
-    icon: Heart,
+    title: "Visualization Technique",
+    description: "Students learn to visualize the abacus, performing complex arithmetic mentally with astonishing speed.",
+    icon: Activity,
   },
   {
-    title: "Expert Pedagogy",
-    description: "Our certified educators employ international teaching standards to ensure holistic development.",
-    icon: GraduationCap,
+    title: "Enhanced Concentration",
+    description: "The tactile and visual nature of our training drastically improves focus, memory, and recall in children.",
+    icon: Zap,
   }
 ];
 
@@ -37,7 +37,7 @@ export default function About() {
             <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-background-warm">
               <Image
                 src="/images/pexels-mary-taylor-5896479.jpg"
-                alt="Our Academy Environment"
+                alt="Brain Training at Pelican Academy"
                 width={800}
                 height={600}
                 className="object-cover aspect-[4/3]"
@@ -51,10 +51,10 @@ export default function About() {
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="absolute -bottom-6 -left-6 bg-primary p-8 rounded-[2rem] shadow-2xl z-20 hidden md:block"
+              className="absolute -bottom-6 -left-6 bg-primary-deep p-8 rounded-[2rem] shadow-2xl z-20 hidden md:block"
             >
-              <p className="text-4xl font-poppins font-bold text-background-warm mb-1">ISO</p>
-              <p className="text-xs font-bold text-accent tracking-[0.2em] uppercase">Certified Quality</p>
+              <p className="text-4xl font-poppins font-bold text-white mb-1">360°</p>
+              <p className="text-xs font-bold text-accent tracking-[0.2em] uppercase">Cognitive Growth</p>
             </motion.div>
           </motion.div>
 
@@ -65,14 +65,14 @@ export default function About() {
             transition={{ duration: 1 }}
           >
             <div className="inline-block bg-primary/5 px-4 py-2 rounded-full mb-6">
-              <span className="text-xs font-bold text-primary uppercase tracking-[0.2em]">Established Excellence</span>
+              <span className="text-xs font-bold text-primary uppercase tracking-[0.2em]">The Science of Learning</span>
             </div>
             <h2 className="text-5xl font-poppins font-bold text-primary-deep mb-8 leading-tight">
-              Crafting a Legacy of <br />
-              <span className="text-accent italic font-medium">Empowered Minds</span>
+              More Than Math: It&apos;s <br />
+              <span className="text-accent italic font-medium">Brain Engineering</span>
             </h2>
             <p className="text-lg text-text-secondary leading-relaxed mb-10 font-inter">
-              Pelican Academy is more than just a tuition center. We are a sanctuary for skill development where traditional wisdom meets modern scientific techniques. Our Singaperumalkoil branch is committed to providing a world-class educational experience.
+              Pelican Academy revolutionizes how children process information. By translating numbers into visual bead movements, we eliminate math phobia and build a foundation of absolute numerical confidence and mental agility.
             </p>
 
             <div className="space-y-6">

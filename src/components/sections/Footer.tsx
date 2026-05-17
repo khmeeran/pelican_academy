@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, Phone, MapPin, Facebook, Instagram, MessageCircle, ArrowUpRight } from "lucide-react";
+import { Mail, Phone, MapPin, MessageCircle, ArrowUpRight } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -14,12 +14,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 mb-24">
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-4 mb-10 group">
-              <div className="relative w-14 h-14 overflow-hidden rounded-2xl border border-accent/30 bg-white/5 backdrop-blur-sm p-1">
+              <div className="relative w-20 h-14 overflow-hidden rounded-2xl bg-white/5 backdrop-blur-sm p-1">
                 <Image
                   src="/logo.jpeg"
                   alt="Pelican Academy Logo"
                   fill
-                  className="object-cover rounded-xl"
+                  className="object-contain"
                 />
               </div>
               <div className="flex flex-col">
@@ -32,9 +32,21 @@ export default function Footer() {
             </p>
             <div className="flex gap-5">
               {[
-                { icon: Facebook, href: "https://www.facebook.com/pelicanacademychengalpattu", label: "Facebook" },
-                { icon: Instagram, href: "https://www.instagram.com/pelican_academy_chengalpattu", label: "Instagram" },
-                { icon: MessageCircle, href: "https://wa.me/919994048827", label: "WhatsApp" }
+                { 
+                  icon: (props: React.ComponentProps<"svg">) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>, 
+                  href: "https://www.facebook.com/pelicanacademychengalpattu", 
+                  label: "Facebook" 
+                },
+                { 
+                  icon: (props: React.ComponentProps<"svg">) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>, 
+                  href: "https://www.instagram.com/pelican_academy_chengalpattu", 
+                  label: "Instagram" 
+                },
+                { 
+                  icon: MessageCircle, 
+                  href: "https://wa.me/919994048827", 
+                  label: "WhatsApp" 
+                }
               ].map((social, i) => (
                 <a 
                   key={i}
@@ -75,15 +87,15 @@ export default function Footer() {
 
           <div>
             <h4 className="font-poppins font-bold text-xl mb-10 text-white flex items-center gap-3">
-              Our Expertise
+              Professional Resources
               <span className="w-10 h-px bg-accent/30" />
             </h4>
             <ul className="space-y-5 text-white/50 text-lg font-inter">
-              <li>3G Abacus Training</li>
-              <li>Vedic Mathematics</li>
-              <li>Synthetic Phonics</li>
-              <li>Calligraphy Arts</li>
-              <li>Teacher Training</li>
+              <li><a href="#" className="hover:text-accent transition-colors">Track Certificate</a></li>
+              <li><a href="#" className="hover:text-accent transition-colors">Free Abacus Worksheets</a></li>
+              <li><a href="#" className="hover:text-accent transition-colors">Learning Portal Demo</a></li>
+              <li><a href="#" className="hover:text-accent transition-colors">Franchise Business Plan</a></li>
+              <li><a href="#" className="hover:text-accent transition-colors">Exam Portal Login</a></li>
             </ul>
           </div>
 

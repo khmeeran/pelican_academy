@@ -3,82 +3,45 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
-  Calculator, BookOpen, PenTool, Languages, Palette, 
-  GraduationCap, ChevronRight, X, CheckCircle2, Star
+  Calculator, Brain, Zap, GraduationCap, ChevronRight, X, CheckCircle2, Star
 } from "lucide-react";
 
 const courses = [
   {
-    title: "Abacus",
-    description: "Master mental arithmetic and boost brain power through 3G Abacus techniques.",
-    details: "Our Abacus program enhances concentration, memory, and speed-math skills. It uses the 3-generation (3G) technique to help children visualize calculations without physical tools.",
-    benefits: ["Improved Concentration", "Photographic Memory", "Speed & Accuracy", "Mental Agility"],
-    ageGroup: "5 - 14 Years",
+    title: "Level 1: Foundation",
+    description: "Introduction to the physical abacus, bead values, and basic addition/subtraction.",
+    details: "Students learn the anatomy of the abacus, correct finger movements, and begin translating physical bead movements into mental imagery. Focuses on single-digit calculations.",
+    benefits: ["Basic Number Sense", "Fine Motor Skills", "Initial Visualization", "Math Confidence"],
+    ageGroup: "5 - 7 Years",
     icon: Calculator,
-    color: "bg-primary/5 text-primary"
+    color: "bg-blue-500/10 text-blue-600"
   },
   {
-    title: "Vedic Math",
-    description: "Discover the speed of Vedic mathematics for complex calculations.",
-    details: "Based on ancient Indian sutras, this program simplifies complex arithmetic into easy-to-solve mental steps. Ideal for competitive exam preparation and building number confidence.",
-    benefits: ["Fast Calculations", "Algebraic Simplification", "Confidence in Math", "Creative Thinking"],
+    title: "Level 2-4: Intermediate",
+    description: "Mastering complex addition/subtraction and introduction to multiplication.",
+    details: "Transitioning heavily from the physical tool to the 'mental abacus'. Students learn formulas for complements and begin multiplying multi-digit numbers mentally.",
+    benefits: ["Photographic Memory", "Speed & Accuracy", "Mental Multiplication", "Enhanced Focus"],
+    ageGroup: "8 - 10 Years",
+    icon: Brain,
+    color: "bg-orange-500/10 text-orange-600"
+  },
+  {
+    title: "Level 5-8: Advanced",
+    description: "High-speed mental arithmetic including division, decimals, and square roots.",
+    details: "The pinnacle of brain training. Students can calculate complex equations faster than a calculator. The brain's right hemisphere is fully activated for rapid processing.",
+    benefits: ["Rapid Mental Math", "Right Brain Activation", "Absolute Concentration", "Academic Excellence"],
+    ageGroup: "11 - 14 Years",
+    icon: Zap,
+    color: "bg-green-500/10 text-green-600"
+  },
+  {
+    title: "Vedic Mathematics",
+    description: "Ancient Indian sutras for ultra-fast arithmetic and algebraic calculations.",
+    details: "Designed for older students facing competitive exams. Simplifies complex arithmetic into 16 easy-to-solve mental formulas, drastically reducing calculation time.",
+    benefits: ["Competitive Edge", "Algebraic Simplification", "Zero Calculation Error", "Creative Problem Solving"],
     ageGroup: "12+ Years",
     icon: GraduationCap,
-    color: "bg-accent/10 text-primary-deep"
-  },
-  {
-    title: "Jolly Phonics",
-    description: "Foundational reading and writing skills through a multi-sensory approach.",
-    details: "A world-renowned synthetic phonics program that teaches children the 42 letter sounds, rather than just the alphabet, enabling them to read and write early.",
-    benefits: ["Early Reading Skills", "Accurate Spelling", "Correct Pronunciation", "Confidence in Literacy"],
-    ageGroup: "4 - 7 Years",
-    icon: BookOpen,
-    color: "bg-accent-gold/10 text-accent"
-  },
-  {
-    title: "English Grammar",
-    description: "Build confidence and fluency with comprehensive grammar mastery.",
-    details: "Structured grammar modules designed to improve spoken and written English. We focus on sentence structure, parts of speech, and vocabulary enrichment.",
-    benefits: ["Fluent Communication", "Error-free Writing", "Rich Vocabulary", "Public Speaking Confidence"],
-    ageGroup: "8+ Years",
-    icon: Languages,
-    color: "bg-primary/5 text-primary"
-  },
-  {
-    title: "Handwriting",
-    description: "Improve legibility and style with scientific handwriting techniques.",
-    details: "Our scientific approach to handwriting focuses on posture, grip, and letter formation to help students write legibly and fast without fatigue.",
-    benefits: ["Neat & Legible Writing", "Increased Writing Speed", "Proper Pen Grip", "Better Exam Presentation"],
-    ageGroup: "6+ Years",
-    icon: PenTool,
-    color: "bg-accent/10 text-primary-deep"
-  },
-  {
-    title: "Calligraphy",
-    description: "The art of beautiful writing to enhance creativity and focus.",
-    details: "Learn the elegant art of decorative writing. This program helps in developing artistic skills, patience, and fine motor coordination.",
-    benefits: ["Artistic Expression", "Focus & Patience", "Fine Motor Skills", "Decorative Projects"],
-    ageGroup: "10+ Years",
-    icon: Palette,
-    color: "bg-accent-gold/10 text-accent"
-  },
-  {
-    title: "Drawing & Art",
-    description: "Unleash inner creativity through structured art and sketching classes.",
-    details: "From basic shapes to advanced shading and coloring, our art program encourages children to express themselves through various mediums.",
-    benefits: ["Creative Expression", "Visual Thinking", "Color Theory Knowledge", "Emotional Well-being"],
-    ageGroup: "5+ Years",
-    icon: Palette,
-    color: "bg-primary/5 text-primary"
-  },
-  {
-    title: "Teacher Training",
-    description: "Expert-led programs for aspiring educators and professionals.",
-    details: "Comprehensive training for those wanting to teach Abacus, Vedic Math, or Phonics. Includes certification and business support for starting your own center.",
-    benefits: ["Career Opportunity", "ISO Certified Training", "Teaching Methodology", "Business Mentorship"],
-    ageGroup: "Adults / Educators",
-    icon: GraduationCap,
-    color: "bg-accent/10 text-primary-deep"
+    color: "bg-purple-500/10 text-purple-600"
   }
 ];
 
@@ -96,7 +59,7 @@ export default function Courses() {
             className="inline-flex items-center gap-2 bg-primary/5 px-4 py-2 rounded-full mb-6"
           >
             <Star size={14} className="text-accent fill-accent" />
-            <span className="text-xs font-bold text-primary uppercase tracking-[0.2em]">Our Curriculum</span>
+            <span className="text-xs font-bold text-primary uppercase tracking-[0.2em]">Structured Pathway</span>
           </motion.div>
           <motion.h3 
             initial={{ opacity: 0, y: 20 }}
@@ -105,7 +68,7 @@ export default function Courses() {
             transition={{ delay: 0.1 }}
             className="text-5xl md:text-6xl font-poppins font-bold text-primary-deep mb-8"
           >
-            Refined <span className="text-accent italic font-medium">Learning Programs</span>
+            Progressive <span className="text-accent italic font-medium">Abacus Curriculum</span>
           </motion.h3>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -114,7 +77,7 @@ export default function Courses() {
             transition={{ delay: 0.2 }}
             className="text-text-secondary max-w-2xl mx-auto text-lg font-inter"
           >
-            Scientifically designed programs to enhance cognitive abilities, creativity, and academic excellence in young learners.
+            An 8-level scientific framework that takes children from basic bead movements to performing complex mental arithmetic faster than a calculator.
           </motion.p>
         </div>
 

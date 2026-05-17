@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import { Poppins, Inter } from "next/font/google";
+import { Montserrat, Open_Sans } from "next/font/google";
 import "./globals.css";
 
-const poppins = Poppins({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["600", "700"],
-  variable: "--font-poppins",
+  weight: ["600", "700", "800"],
+  variable: "--font-poppins", // Keeping variable name same to avoid refactoring all files
 });
 
-const inter = Inter({
+const openSans = Open_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-inter", // Keeping variable name same
 });
 
 export const metadata: Metadata = {
@@ -20,6 +20,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Pelican Academy" }],
   creator: "Pelican Academy",
   publisher: "Pelican Academy",
+  metadataBase: new URL("https://pelicanacademy.in"),
   formatDetection: {
     email: false,
     address: true,
@@ -95,7 +96,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${poppins.variable} ${inter.variable} font-sans antialiased text-text-main selection:bg-primary/20`}>
+      <body className={`${montserrat.variable} ${openSans.variable} font-sans antialiased text-text-main selection:bg-primary/20`}>
         {children}
       </body>
     </html>

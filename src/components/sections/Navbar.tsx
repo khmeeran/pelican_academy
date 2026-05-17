@@ -28,20 +28,41 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-6 py-6",
-        scrolled ? "bg-primary shadow-xl py-4" : "bg-transparent"
-      )}
-    >
+    <>
+      {/* Utility Bar */}
+      <div className="fixed top-0 left-0 right-0 z-[60] bg-primary-deep text-white/80 py-2 px-6 hidden md:block">
+        <div className="max-w-7xl mx-auto flex justify-between items-center text-[10px] font-bold tracking-[0.2em] uppercase">
+          <div className="flex gap-6">
+            <span className="flex items-center gap-2">
+              <span className="w-1 h-1 rounded-full bg-accent" />
+              ISO 9001:2015 Certified
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="w-1 h-1 rounded-full bg-accent" />
+              10+ Years Legacy
+            </span>
+          </div>
+          <div className="flex gap-6">
+            <a href="#" className="hover:text-accent transition-colors">Student Login</a>
+            <a href="#" className="hover:text-accent transition-colors border-l border-white/20 pl-6">Franchise Portal</a>
+          </div>
+        </div>
+      </div>
+
+      <nav
+        className={cn(
+          "fixed left-0 right-0 z-50 transition-all duration-500 px-6",
+          scrolled ? "top-0 bg-primary shadow-xl py-4" : "top-0 md:top-10 bg-transparent py-6"
+        )}
+      >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative w-12 h-12 overflow-hidden rounded-xl border-2 border-accent/20 transition-transform duration-500 group-hover:scale-105">
+          <div className="relative w-16 h-12 overflow-hidden rounded-xl transition-transform duration-500 group-hover:scale-105">
             <Image
               src="/logo.jpeg"
               alt="Pelican Academy Logo"
               fill
-              className="object-cover"
+              className="object-contain"
             />
           </div>
           <div className="flex flex-col">
@@ -147,5 +168,6 @@ export default function Navbar() {
         )}
       </AnimatePresence>
     </nav>
+    </>
   );
 }

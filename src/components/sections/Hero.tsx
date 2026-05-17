@@ -46,21 +46,21 @@ export default function Hero() {
           </motion.div>
           
           <h1 className="text-6xl md:text-8xl font-poppins font-bold leading-[1.05] mb-8 tracking-tight text-primary-deep">
-            Where Excellence <br />
-            <span className="text-accent italic font-medium">Meets Character</span>
+            Unleash Your <br />
+            <span className="text-accent italic font-medium">Child&apos;s Genius</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-text-secondary mb-12 max-w-xl leading-relaxed font-inter font-medium">
-            An ISO 9001:2015 Certified premium educational ecosystem specializing in holistic skill development for the next generation.
+            The world&apos;s most advanced Abacus & Mental Math program designed to boost concentration, memory, and cognitive skills.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6">
             <a href="#contact" className="btn-primary flex items-center justify-center gap-3 text-lg group">
-              Start Journey
+              Book Free Demo
               <ArrowRight size={20} className="transition-transform duration-300 group-hover:translate-x-1" />
             </a>
-            <a href="#franchise" className="btn-secondary flex items-center justify-center gap-3 text-lg">
-              Partner With Us
+            <a href="#courses" className="btn-secondary flex items-center justify-center gap-3 text-lg">
+              Explore Programs
             </a>
           </div>
 

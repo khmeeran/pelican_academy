@@ -90,7 +90,7 @@ export default function Franchise() {
             <div className="max-w-xl">
               <h3 className="text-4xl md:text-5xl font-poppins font-bold text-white mb-6">Ready to Start Your Academy?</h3>
               <p className="text-xl text-white/80 font-inter mb-0">
-                Download our comprehensive franchise prospectus and learn about our unique "Zero Royalty" model.
+                Download our comprehensive franchise prospectus and learn about our unique &quot;Zero Royalty&quot; model.
               </p>
             </div>
             <a href="#contact" className="bg-accent text-primary-deep px-12 py-6 rounded-2xl font-bold text-xl inline-flex items-center gap-4 hover:scale-105 active:scale-95 transition-all shadow-2xl shadow-black/20 whitespace-nowrap">
