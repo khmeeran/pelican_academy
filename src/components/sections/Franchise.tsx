@@ -10,18 +10,18 @@ const franchiseBenefits = [
     icon: Landmark,
   },
   {
-    title: "Low Investment - High Growth",
-    desc: "Start your educational venture with an affordable model and excellent earning potential.",
+    title: "Low Investment – High Growth",
+    desc: "Start your educational venture with an affordable franchise model and excellent earning potential.",
     icon: TrendingUp,
   },
   {
-    title: "End-to-End Support",
-    desc: "Complete academic and operational support from study materials to activity planning.",
+    title: "Complete Support",
+    desc: "End-to-end academic and operational support, from study materials to activity planning.",
     icon: ShieldCheck,
   },
   {
-    title: "Proven Curriculum",
-    desc: "Offer in-demand courses like Abacus, Jolly Phonics, Vedic Maths, and more.",
+    title: "Skill-Based Programs",
+    desc: "Offer Abacus, Jolly Phonics, Vedic Maths, Handwriting Improvement and English Grammar.",
     icon: Award,
   },
   {
@@ -30,18 +30,18 @@ const franchiseBenefits = [
     icon: GraduationCap,
   },
   {
-    title: "Marketing & Branding",
-    desc: "Build a strong presence in your locality with our professional promotional support.",
+    title: "Smart Marketing Assistance",
+    desc: "Build a strong presence in your locality with our promotional and branding support.",
     icon: Megaphone,
   },
   {
-    title: "Child-Centric Methodology",
+    title: "Child-Centric Learning",
     desc: "Programs designed to enhance confidence, creativity, concentration, and communication.",
     icon: Heart,
   },
   {
-    title: "Scalable Business Model",
-    desc: "A flexible and professionally structured model suitable for passionate entrepreneurs.",
+    title: "Easy to Manage & Expand",
+    desc: "A flexible and professionally structured model suitable for passionate educators and entrepreneurs.",
     icon: LayoutGrid,
   }
 ];

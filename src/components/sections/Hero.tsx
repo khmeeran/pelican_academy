@@ -42,7 +42,7 @@ export default function Hero() {
             className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm border border-primary/10 px-5 py-2.5 rounded-full mb-8 shadow-sm"
           >
             <span className="flex h-2 w-2 rounded-full bg-accent animate-pulse" />
-            <span className="text-xs font-bold text-primary uppercase tracking-[0.2em]">Admissions Open 2024-25</span>
+            <span className="text-xs font-bold text-primary uppercase tracking-[0.2em]">Admissions Open 2026-27</span>
           </motion.div>
           
           <h1 className="text-6xl md:text-8xl font-poppins font-bold leading-[1.05] mb-8 tracking-tight text-primary-deep">
@@ -51,7 +51,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-xl md:text-2xl text-text-secondary mb-12 max-w-xl leading-relaxed font-inter font-medium">
-            The world&apos;s most advanced Abacus & Mental Math program designed to boost concentration, memory, and cognitive skills.
+            Advanced skill development programs including Abacus, Vedic Maths, and Jolly Phonics, designed to boost concentration, memory, and cognitive skills.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6">

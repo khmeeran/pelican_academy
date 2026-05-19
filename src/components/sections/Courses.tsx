@@ -3,45 +3,99 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
-  Calculator, Brain, Zap, GraduationCap, ChevronRight, X, CheckCircle2, Star
+  Calculator, Brain, Zap, GraduationCap, ChevronRight, X, CheckCircle2, Star, BookOpen, PenTool, Palette, Type
 } from "lucide-react";
 
 const courses = [
   {
-    title: "Level 1: Foundation",
-    description: "Introduction to the physical abacus, bead values, and basic addition/subtraction.",
-    details: "Students learn the anatomy of the abacus, correct finger movements, and begin translating physical bead movements into mental imagery. Focuses on single-digit calculations.",
-    benefits: ["Basic Number Sense", "Fine Motor Skills", "Initial Visualization", "Math Confidence"],
-    ageGroup: "5 - 7 Years",
+    title: "Abacus Program",
+    description: "A scientifically designed learning method that strengthens mathematical abilities and brain development.",
+    details: "The course consists of 5 progressive levels, enabling students to gradually master concepts with confidence and accuracy. It uses the physical abacus to build mental calculation skills.",
+    benefits: [
+      "Enhances memory power and concentration",
+      "Improves calculation speed and mental accuracy",
+      "Develops visualization and analytical thinking",
+      "Strengthens logical reasoning",
+      "Builds confidence in mental math"
+    ],
+    ageGroup: "5 - 14 Years",
     icon: Calculator,
     color: "bg-blue-500/10 text-blue-600"
   },
   {
-    title: "Level 2-4: Intermediate",
-    description: "Mastering complex addition/subtraction and introduction to multiplication.",
-    details: "Transitioning heavily from the physical tool to the 'mental abacus'. Students learn formulas for complements and begin multiplying multi-digit numbers mentally.",
-    benefits: ["Photographic Memory", "Speed & Accuracy", "Mental Multiplication", "Enhanced Focus"],
-    ageGroup: "8 - 10 Years",
-    icon: Brain,
+    title: "Vedic Maths",
+    description: "An innovative and systematic approach to mathematics that simplifies complex calculations.",
+    details: "Enables students to solve problems with greater speed, accuracy, and confidence using powerful mental techniques and logical methods from ancient Indian sutras.",
+    benefits: [
+      "Enhances calculation speed and numerical accuracy",
+      "Strengthens analytical thinking and problem-solving",
+      "Encourages mental math without calculators",
+      "Develops logical reasoning and cognitive skills",
+      "Makes mathematics engaging and interactive"
+    ],
+    ageGroup: "10+ Years",
+    icon: Zap,
     color: "bg-orange-500/10 text-orange-600"
   },
   {
-    title: "Level 5-8: Advanced",
-    description: "High-speed mental arithmetic including division, decimals, and square roots.",
-    details: "The pinnacle of brain training. Students can calculate complex equations faster than a calculator. The brain's right hemisphere is fully activated for rapid processing.",
-    benefits: ["Rapid Mental Math", "Right Brain Activation", "Absolute Concentration", "Academic Excellence"],
-    ageGroup: "11 - 14 Years",
-    icon: Zap,
+    title: "Jolly Phonics",
+    description: "A multi-sensory approach to teaching reading and writing through letter sounds.",
+    details: "Combines actions, stories, songs, and interactive activities to help young learners develop strong communication and literacy skills effectively.",
+    benefits: [
+      "Develops strong reading and pronunciation skills",
+      "Improves spelling and word recognition",
+      "Enhances listening, speaking, and communication",
+      "Builds strong foundation in English",
+      "Strengthens vocabulary and comprehension"
+    ],
+    ageGroup: "4 - 7 Years",
+    icon: Brain,
     color: "bg-green-500/10 text-green-600"
   },
   {
-    title: "Vedic Mathematics",
-    description: "Ancient Indian sutras for ultra-fast arithmetic and algebraic calculations.",
-    details: "Designed for older students facing competitive exams. Simplifies complex arithmetic into 16 easy-to-solve mental formulas, drastically reducing calculation time.",
-    benefits: ["Competitive Edge", "Algebraic Simplification", "Zero Calculation Error", "Creative Problem Solving"],
-    ageGroup: "12+ Years",
-    icon: GraduationCap,
+    title: "English Grammar",
+    description: "Essential component of language development for clear and confident communication.",
+    details: "Enhances a child's ability to read, write, speak, and comprehend English effectively, supporting both academic and personal growth.",
+    benefits: [
+      "Enhances spoken and written communication",
+      "Develops strong sentence construction",
+      "Improves reading comprehension and vocabulary",
+      "Encourages clear expression of thoughts",
+      "Builds confidence in public communication"
+    ],
+    ageGroup: "7+ Years",
+    icon: BookOpen,
     color: "bg-purple-500/10 text-purple-600"
+  },
+  {
+    title: "Handwriting Improvement",
+    description: "Develop neat, clear, and well-structured handwriting through guided practice.",
+    details: "Focuses on proper stroke formation, spacing, and effective writing techniques to make writing more organized and easy to read.",
+    benefits: [
+      "Improves clarity, neatness, and consistency",
+      "Enhances letter formation and alignment",
+      "Increases writing speed with accuracy",
+      "Boosts confidence in exams",
+      "Makes writing organized and attractive"
+    ],
+    ageGroup: "6+ Years",
+    icon: PenTool,
+    color: "bg-pink-500/10 text-pink-600"
+  },
+  {
+    title: "Calligraphy",
+    description: "The art of beautiful, artistic, and stylish writing using creative design techniques.",
+    details: "Focuses on creating elegant letters and creative handwriting patterns using proper strokes, spacing, and modern/traditional designs.",
+    benefits: [
+      "Learn innovative writing styles",
+      "Develop artistic presentation skills",
+      "Explore modern and traditional patterns",
+      "Improve creativity and aesthetic sense",
+      "Gain confidence in creating decorative content"
+    ],
+    ageGroup: "10+ Years",
+    icon: Type,
+    color: "bg-indigo-500/10 text-indigo-600"
   }
 ];
 
@@ -59,7 +113,7 @@ export default function Courses() {
             className="inline-flex items-center gap-2 bg-primary/5 px-4 py-2 rounded-full mb-6"
           >
             <Star size={14} className="text-accent fill-accent" />
-            <span className="text-xs font-bold text-primary uppercase tracking-[0.2em]">Structured Pathway</span>
+            <span className="text-xs font-bold text-primary uppercase tracking-[0.2em]">Our Enrichment Programs</span>
           </motion.div>
           <motion.h3 
             initial={{ opacity: 0, y: 20 }}
@@ -68,7 +122,7 @@ export default function Courses() {
             transition={{ delay: 0.1 }}
             className="text-5xl md:text-6xl font-poppins font-bold text-primary-deep mb-8"
           >
-            Progressive <span className="text-accent italic font-medium">Abacus Curriculum</span>
+            Nurturing <span className="text-accent italic font-medium">Holistic Development</span>
           </motion.h3>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -77,11 +131,11 @@ export default function Courses() {
             transition={{ delay: 0.2 }}
             className="text-text-secondary max-w-2xl mx-auto text-lg font-inter"
           >
-            An 8-level scientific framework that takes children from basic bead movements to performing complex mental arithmetic faster than a calculator.
+            Scientifically designed programs to enhance children&apos;s cognitive, linguistic, and artistic abilities through engaging learning methods.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {courses.map((course, index) => (
             <motion.div
               key={index}
@@ -105,6 +159,24 @@ export default function Courses() {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-16 bg-white/50 backdrop-blur-sm p-8 rounded-[2.5rem] border border-primary/5 flex flex-col md:flex-row items-center justify-between gap-8"
+        >
+          <div className="flex items-center gap-6">
+            <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center text-accent">
+              <Palette size={32} />
+            </div>
+            <div>
+              <h4 className="text-xl font-bold text-primary-deep">Drawing & Enrichment Activities</h4>
+              <p className="text-text-secondary text-sm">Fostering creativity, artistic expression, and holistic development.</p>
+            </div>
+          </div>
+          <a href="#contact" className="btn-primary whitespace-nowrap">Enquire Now</a>
+        </motion.div>
       </div>
 
       {/* Course Detail Modal */}

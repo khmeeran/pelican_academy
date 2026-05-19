@@ -6,23 +6,23 @@ import Image from "next/image";
 
 const trainingFeatures = [
   {
-    title: "Master Curriculum",
-    desc: "In-depth training on Abacus, Vedic Math, and Jolly Phonics methodologies.",
+    title: "All-Course Coverage",
+    desc: "Professional Teacher Training Program available for all our specialized courses.",
     icon: BookOpen
   },
   {
-    title: "Global Certification",
-    desc: "ISO 9001:2015 recognized certification to teach anywhere in the network.",
+    title: "Expert Mentorship",
+    desc: "Comprehensive guidance and mentorship from experienced trainers and subject experts.",
     icon: Award
   },
   {
-    title: "Micro-Teaching Sessions",
-    desc: "Practical hands-on teaching experience with real-time expert feedback.",
+    title: "Practical Methodology",
+    desc: "Focus on effective teaching methodologies and classroom management techniques.",
     icon: Users
   },
   {
-    title: "Business Launch Support",
-    desc: "Learn how to market your classes and manage your own teaching center.",
+    title: "Support & Certification",
+    desc: "Personalized assistance and completion certificate awarded upon successful training.",
     icon: Briefcase
   }
 ];
