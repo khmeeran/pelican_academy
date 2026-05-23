@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
-  Calculator, Brain, Zap, GraduationCap, ChevronRight, X, CheckCircle2, Star, BookOpen, PenTool, Palette, Type
+  Calculator, Brain, Zap, ChevronRight, X, CheckCircle2, Star, BookOpen, PenTool, Palette, Type
 } from "lucide-react";
 
 const courses = [
