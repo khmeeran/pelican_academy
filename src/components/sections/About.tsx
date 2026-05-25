@@ -65,35 +65,22 @@ export default function About() {
             transition={{ duration: 1 }}
           >
             <div className="inline-block bg-primary/5 px-4 py-2 rounded-full mb-6">
-              <span className="text-xs font-bold text-primary uppercase tracking-[0.2em]">The Science of Learning</span>
+              <span className="text-xs font-bold text-primary uppercase tracking-[0.2em]">About Us</span>
             </div>
             <h2 className="text-5xl font-poppins font-bold text-primary-deep mb-8 leading-tight">
-              More Than Math: It&apos;s <br />
-              <span className="text-accent italic font-medium">Brain Engineering</span>
+              Crafting Excellence <br />
+              <span className="text-accent italic font-medium">Since 2021</span>
             </h2>
-            <p className="text-lg text-text-secondary leading-relaxed mb-10 font-inter">
-              Pelican Academy is more than just a tuition center—it&apos;s a launchpad for future leaders. Our proven methodologies transform how children process information, turning academic struggle into self-assured mastery and giving them the critical advantage they need to lead.
-            </p>
-
-            <div className="space-y-6">
-              {values.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.2 }}
-                  className="flex gap-6 items-start p-6 rounded-3xl transition-colors hover:bg-background-warm group"
-                >
-                  <div className="w-14 h-14 rounded-2xl bg-primary/5 flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                    <item.icon size={28} />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold text-primary-deep mb-2">{item.title}</h4>
-                    <p className="text-text-secondary text-sm leading-relaxed">{item.description}</p>
-                  </div>
-                </motion.div>
-              ))}
+            <div className="space-y-6 text-lg text-text-secondary leading-relaxed font-inter">
+              <p>
+                Established in 2021, PELICAN Academy has been dedicated to providing quality extra curricular education for children. We provide a wide range of extra curricular activities that help children improve their academic, creative, and communication skills.
+              </p>
+              <p>
+                Our programs are designed to make learning enjoyable, interactive, and activity-based. Our academy provides a friendly and supportive environment for students of different age groups.
+              </p>
+              <p>
+                We believe every child has unique talents, and we help them discover and strengthen their abilities. Experienced and dedicated trainers guide students with personal attention and care.
+              </p>
             </div>
           </motion.div>
         </div>
