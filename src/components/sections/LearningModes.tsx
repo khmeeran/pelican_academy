@@ -29,7 +29,7 @@ const modes = [
 
 export default function LearningModes() {
   return (
-    <section className="section-spacing bg-white">
+    <section id="learning-modes" className="section-spacing bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <h2 className="text-5xl font-poppins font-bold text-primary-deep mb-6">

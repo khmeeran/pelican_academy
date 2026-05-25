@@ -9,7 +9,7 @@ const services = [
     title: "Learning Portal",
     description: "Interactive digital tools for visualization and mental math practice from home.",
     icon: Laptop,
-    href: "#",
+    href: "#learning-modes",
     color: "bg-blue-500/10 text-blue-600",
     hoverColor: "group-hover:bg-blue-600"
   },
