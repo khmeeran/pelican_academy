@@ -53,6 +53,14 @@ export default function About() {
               viewport={{ once: true }}
               className="absolute -bottom-6 -left-6 bg-primary-deep p-8 rounded-[2rem] shadow-2xl z-20 hidden md:block"
             >
+              <div className="relative w-20 h-10 mb-2">
+                <Image
+                  src="/logo-transparent.png"
+                  alt="Logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
               <p className="text-4xl font-poppins font-bold text-white mb-1">360°</p>
               <p className="text-xs font-bold text-accent tracking-[0.2em] uppercase">Cognitive Growth</p>
             </motion.div>
