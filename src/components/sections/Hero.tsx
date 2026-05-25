@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background-warm pt-20 px-6">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background-warm pt-48 pb-20 px-6">
       {/* Cinematic Background Elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(107,122,61,0.05),transparent_70%)]" />
