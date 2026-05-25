@@ -79,7 +79,7 @@ export default function Hero() {
                 <Trophy size={28} />
               </div>
               <div>
-                <p className="text-sm font-bold text-primary-deep leading-tight">10+ Years</p>
+                <p className="text-sm font-bold text-primary-deep leading-tight">5+ Years</p>
                 <p className="text-xs text-text-secondary uppercase tracking-widest font-bold">Legacy</p>
               </div>
             </div>

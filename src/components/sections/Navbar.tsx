@@ -50,7 +50,7 @@ export default function Navbar() {
             </span>
             <span className="flex items-center gap-2">
               <span className="w-1 h-1 rounded-full bg-accent" />
-              10+ Years Legacy
+              5+ Years Legacy
             </span>
           </div>
           <div className="flex gap-6">
