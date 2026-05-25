@@ -36,8 +36,8 @@ export default function About() {
           >
             <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-background-warm">
               <Image
-                src="/images/pexels-mary-taylor-5896479.jpg"
-                alt="Brain Training at Pelican Academy"
+                src="/images/pexels-bipspatiala-31864391.jpg"
+                alt="PELICAN Academy Learning Environment"
                 width={800}
                 height={600}
                 className="object-cover aspect-[4/3]"
