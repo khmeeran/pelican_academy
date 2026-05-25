@@ -13,18 +13,14 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 mb-24">
           <div className="lg:col-span-1">
-            <Link href="/#home" className="flex items-center gap-4 mb-10 group">
-              <div className="relative w-20 h-14 overflow-hidden rounded-2xl bg-white/5 backdrop-blur-sm p-1">
+            <Link href="/#home" className="flex items-center mb-10 group">
+              <div className="relative w-48 h-24 transition-all duration-500 group-hover:scale-105">
                 <Image
-                  src="/logo.jpeg"
+                  src="/logo-transparent.png"
                   alt="Pelican Academy Logo"
                   fill
                   className="object-contain"
                 />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-poppins font-bold text-2xl leading-tight tracking-tight text-white group-hover:text-accent transition-colors">PELICAN</span>
-                <span className="font-inter text-[10px] font-bold tracking-[0.3em] text-accent uppercase -mt-0.5">Academy</span>
               </div>
             </Link>
             <p className="text-white/60 text-lg leading-relaxed mb-10 font-inter max-w-xs">
