@@ -98,8 +98,8 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               className={cn(
-                "relative text-[11px] xl:text-xs font-bold uppercase tracking-[0.15em] transition-colors duration-300 group whitespace-nowrap",
-                scrolled ? "text-white/80 hover:text-white" : "text-primary-deep/80 hover:text-primary"
+                "relative text-xs xl:text-sm font-black uppercase tracking-[0.1em] transition-colors duration-300 group whitespace-nowrap",
+                scrolled ? "text-white hover:text-accent" : "text-primary-deep hover:text-primary"
               )}
             >
               {link.name}
@@ -112,11 +112,11 @@ export default function Navbar() {
           <a
             href="tel:+919994048827"
             className={cn(
-              "flex items-center gap-2 px-6 py-3 rounded-full text-[11px] font-bold tracking-widest transition-all duration-300 shadow-lg hover:scale-105 active:scale-95 whitespace-nowrap",
-              scrolled ? "bg-accent text-primary-deep" : "bg-primary text-white"
+              "flex items-center gap-2 px-7 py-3.5 rounded-full text-xs xl:text-sm font-black tracking-widest transition-all duration-300 shadow-xl hover:scale-105 active:scale-95 whitespace-nowrap",
+              scrolled ? "bg-accent text-primary-deep" : "bg-primary-deep text-white"
             )}
           >
-            <Phone size={14} />
+            <Phone size={16} />
             <span>ENROLL NOW</span>
           </a>
         </div>
