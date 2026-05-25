@@ -46,6 +46,14 @@ export default function Contact() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
+                <div className="relative w-48 h-24 mb-6 -ml-4 transition-all duration-500 hover:scale-105">
+                  <Image
+                    src="/logo-transparent.png"
+                    alt="Pelican Academy Logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
                 <div className="inline-block bg-white/10 px-4 py-2 rounded-full mb-10 backdrop-blur-sm border border-white/10">
                   <span className="text-xs font-bold text-accent uppercase tracking-[0.2em]">Admissions Open</span>
                 </div>
