@@ -92,7 +92,7 @@ export default function Franchise() {
               <div className="max-w-xl">
                 <div className="relative w-40 h-20 mb-8 -ml-2 transition-all duration-500 hover:scale-105">
                   <Image
-                    src="/logo-transparent.png"
+                    src="/pelican-logo-official-white.png"
                     alt="Pelican Academy Logo"
                     fill
                     className="object-contain"

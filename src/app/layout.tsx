@@ -64,7 +64,7 @@ export default function RootLayout({
     "@type": "EducationalOrganization",
     "name": "Pelican Academy",
     "url": "https://pelicanacademy.in",
-    "logo": "https://pelicanacademy.in/pelican-white-transparent-logo.png",
+    "logo": "https://pelicanacademy.in/pelican-logo-official-white.png",
     "description": "ISO 9001:2015 Certified Institution specializing in Abacus, Vedic Math, and Phonics.",
     "address": {
       "@type": "PostalAddress",

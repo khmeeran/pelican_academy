@@ -16,7 +16,7 @@ export default function Footer() {
             <Link href="/#home" className="flex items-center mb-10 group">
               <div className="relative w-48 h-24 transition-all duration-500 group-hover:scale-105">
                 <Image
-                  src="/pelican-white-transparent-logo.png"
+                  src="/pelican-logo-official-white.png"
                   alt="Pelican Academy Logo"
                   fill
                   className="object-contain"

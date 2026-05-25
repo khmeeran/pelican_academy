@@ -49,7 +49,7 @@ export default function Contact() {
               >
                 <div className="relative w-48 h-24 mb-6 -ml-4 transition-all duration-500 hover:scale-105">
                   <Image
-                    src="/logo-transparent.png"
+                    src="/pelican-logo-official-white.png"
                     alt="Pelican Academy Logo"
                     fill
                     className="object-contain"

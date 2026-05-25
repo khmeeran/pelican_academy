@@ -55,7 +55,7 @@ export default function About() {
             >
               <div className="relative w-20 h-10 mb-2">
                 <Image
-                  src="/logo-transparent.png"
+                  src="/pelican-logo-official-white.png"
                   alt="Logo"
                   fill
                   className="object-contain"

@@ -69,7 +69,7 @@ export default function Navbar() {
             scrolled ? "w-16 h-12 brightness-100" : "w-32 h-24 md:w-48 md:h-36 brightness-0"
           )}>
             <Image
-              src="/logo-transparent.png"
+              src="/pelican-logo-official-white.png"
               alt="Pelican Academy Logo"
               fill
               priority
