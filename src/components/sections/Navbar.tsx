@@ -65,8 +65,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/#home" onClick={handleLogoClick} className="flex items-center gap-4 group shrink-0">
           <div className={cn(
-            "relative transition-all duration-500 group-hover:scale-105",
-            scrolled ? "w-14 h-10" : "w-20 h-16 md:w-28 md:h-20"
+            "relative transition-all duration-700 ease-[0.16,1,0.3,1] group-hover:scale-105",
+            scrolled ? "w-16 h-12" : "w-32 h-24 md:w-48 md:h-36"
           )}>
             <Image
               src="/logo-transparent.png"
@@ -76,7 +76,10 @@ export default function Navbar() {
               className="object-contain"
             />
           </div>
-          <div className="flex flex-col">
+          <div className={cn(
+            "flex flex-col transition-all duration-700 ease-[0.16,1,0.3,1]",
+            scrolled ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10 pointer-events-none"
+          )}>
             <span className={cn(
               "font-poppins font-black leading-none tracking-tight transition-all duration-500",
               scrolled ? "text-lg text-white" : "text-2xl md:text-3xl text-primary-deep"
