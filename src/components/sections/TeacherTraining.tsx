@@ -34,7 +34,7 @@ const trainingFeatures = [
 
 export default function TeacherTraining() {
   return (
-    <section className="section-spacing bg-background-warm">
+    <section id="teacher-training" className="section-spacing bg-background-warm">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <motion.div

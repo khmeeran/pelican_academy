@@ -30,10 +30,10 @@ const services = [
     hoverColor: "group-hover:bg-green-600"
   },
   {
-    title: "School Programs",
-    description: "Integrate our proven curriculum directly into your school's academic schedule.",
+    title: "Global Curriculum",
+    description: "Our world-class academic programs including Abacus, Vedic Maths, and more.",
     icon: School,
-    href: "#contact",
+    href: "#courses",
     color: "bg-purple-500/10 text-purple-600",
     hoverColor: "group-hover:bg-purple-600"
   }
