@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Landmark, TrendingUp, ShieldCheck, ArrowRight, Award, GraduationCap, Megaphone, Heart, LayoutGrid } from "lucide-react";
+import Image from "next/image";
 
 const franchiseBenefits = [
   {
@@ -86,17 +87,27 @@ export default function Franchise() {
             <div className="absolute top-0 right-0 w-96 h-96 border-[40px] border-white rounded-full -translate-y-1/2 translate-x-1/2" />
           </div>
 
-          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
-            <div className="max-w-xl">
-              <h3 className="text-4xl md:text-5xl font-poppins font-bold text-white mb-6">Ready to Start Your Academy?</h3>
-              <p className="text-xl text-white/80 font-inter mb-0">
-                Download our comprehensive franchise prospectus and learn about our unique &quot;Zero Royalty&quot; model.
-              </p>
+          <div className="relative z-10">
+            <div className="relative w-48 h-24 mb-10 -ml-4 transition-all duration-500 hover:scale-105">
+              <Image
+                src="/logo-transparent.png"
+                alt="Pelican Academy Logo"
+                fill
+                className="object-contain"
+              />
             </div>
-            <a href="#contact" className="bg-accent text-primary-deep px-12 py-6 rounded-2xl font-bold text-xl inline-flex items-center gap-4 hover:scale-105 active:scale-95 transition-all shadow-2xl shadow-black/20 whitespace-nowrap">
-              Get Prospectus
-              <ArrowRight size={24} />
-            </a>
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+              <div className="max-w-xl">
+                <h3 className="text-4xl md:text-5xl font-poppins font-bold text-white mb-6">Ready to Start Your Academy?</h3>
+                <p className="text-xl text-white/80 font-inter mb-0">
+                  Download our comprehensive franchise prospectus and learn about our unique &quot;Zero Royalty&quot; model.
+                </p>
+              </div>
+              <a href="#contact" className="bg-accent text-primary-deep px-12 py-6 rounded-2xl font-bold text-xl inline-flex items-center gap-4 hover:scale-105 active:scale-95 transition-all shadow-2xl shadow-black/20 whitespace-nowrap">
+                Get Prospectus
+                <ArrowRight size={24} />
+              </a>
+            </div>
           </div>
         </div>
       </div>
