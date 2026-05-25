@@ -46,12 +46,12 @@ export default function Hero() {
           </motion.div>
           
           <h1 className="text-6xl md:text-8xl font-poppins font-bold leading-[1.05] mb-8 tracking-tight text-primary-deep">
-            Give Your Child the <br />
-            <span className="text-accent italic font-medium">Academic Advantage</span>
+            A Legacy of <br />
+            <span className="text-accent italic font-medium">Academic Excellence</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-text-secondary mb-12 max-w-xl leading-relaxed font-inter font-medium">
-            Equip your child with lightning-fast calculation, flawless communication, and peak cognitive focus—essential skills that traditional schooling often misses.
+            Nurturing the next generation of global leaders through a world-class curriculum of cognitive, mathematical, and linguistic enrichment.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6">
