@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Phone, MapPin, CheckCircle2, AlertCircle, ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function Contact() {
   const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
