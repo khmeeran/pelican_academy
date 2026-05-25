@@ -53,10 +53,6 @@ export default function Navbar() {
               5+ Years Legacy
             </span>
           </div>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-accent transition-colors">Student Login</a>
-            <a href="#" className="hover:text-accent transition-colors border-l border-white/20 pl-6">Franchise Portal</a>
-          </div>
         </div>
       </div>
 
