@@ -13,7 +13,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 mb-24">
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-4 mb-10 group">
+            <Link href="/#home" className="flex items-center gap-4 mb-10 group">
               <div className="relative w-20 h-14 overflow-hidden rounded-2xl bg-white/5 backdrop-blur-sm p-1">
                 <Image
                   src="/logo.jpeg"
