@@ -63,10 +63,10 @@ export default function Navbar() {
         )}
       >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/#home" onClick={handleLogoClick} className="flex items-center gap-3 group">
+        <Link href="/#home" onClick={handleLogoClick} className="flex items-center gap-4 group shrink-0">
           <div className={cn(
             "relative transition-all duration-500 group-hover:scale-105",
-            scrolled ? "w-16 h-12" : "w-24 h-18 md:w-32 md:h-24"
+            scrolled ? "w-14 h-10" : "w-20 h-16 md:w-28 md:h-20"
           )}>
             <Image
               src="/logo-transparent.png"
@@ -79,23 +79,23 @@ export default function Navbar() {
           <div className="flex flex-col">
             <span className={cn(
               "font-poppins font-black leading-none tracking-tight transition-all duration-500",
-              scrolled ? "text-xl text-white" : "text-3xl md:text-4xl text-primary-deep"
+              scrolled ? "text-lg text-white" : "text-2xl md:text-3xl text-primary-deep"
             )}>PELICAN</span>
             <span className={cn(
               "font-inter font-bold tracking-[0.4em] uppercase transition-all duration-500",
-              scrolled ? "text-[8px] text-accent/90" : "text-xs md:text-sm text-accent"
+              scrolled ? "text-[7px] text-accent/90" : "text-[10px] md:text-xs text-accent"
             )}>Academy</span>
           </div>
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-12">
+        <div className="hidden lg:flex items-center gap-8 xl:gap-12">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
               className={cn(
-                "relative text-sm font-bold uppercase tracking-widest transition-colors duration-300 group",
+                "relative text-[11px] xl:text-xs font-bold uppercase tracking-[0.15em] transition-colors duration-300 group whitespace-nowrap",
                 scrolled ? "text-white/80 hover:text-white" : "text-primary-deep/80 hover:text-primary"
               )}
             >
@@ -103,14 +103,17 @@ export default function Navbar() {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
+        </div>
+
+        <div className="hidden md:flex items-center">
           <a
             href="tel:+919994048827"
             className={cn(
-              "flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold transition-all duration-300 shadow-lg hover:scale-105 active:scale-95",
+              "flex items-center gap-2 px-6 py-3 rounded-full text-[11px] font-bold tracking-widest transition-all duration-300 shadow-lg hover:scale-105 active:scale-95 whitespace-nowrap",
               scrolled ? "bg-accent text-primary-deep" : "bg-primary text-white"
             )}
           >
-            <Phone size={16} />
+            <Phone size={14} />
             <span>ENROLL NOW</span>
           </a>
         </div>
