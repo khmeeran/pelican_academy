@@ -88,17 +88,17 @@ export default function Franchise() {
           </div>
 
           <div className="relative z-10">
-            <div className="relative w-48 h-24 mb-10 -ml-4 transition-all duration-500 hover:scale-105">
-              <Image
-                src="/logo-transparent.png"
-                alt="Pelican Academy Logo"
-                fill
-                className="object-contain"
-              />
-            </div>
             <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
               <div className="max-w-xl">
-                <h3 className="text-4xl md:text-5xl font-poppins font-bold text-white mb-6">Ready to Start Your Academy?</h3>
+                <div className="relative w-40 h-20 mb-8 -ml-2 transition-all duration-500 hover:scale-105">
+                  <Image
+                    src="/logo-transparent.png"
+                    alt="Pelican Academy Logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <h3 className="text-4xl md:text-5xl font-poppins font-bold text-white mb-6 leading-tight">Ready to Start Your Academy?</h3>
                 <p className="text-xl text-white/80 font-inter mb-0">
                   Download our comprehensive franchise prospectus and learn about our unique &quot;Zero Royalty&quot; model.
                 </p>
