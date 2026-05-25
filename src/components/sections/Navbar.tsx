@@ -8,10 +8,10 @@ import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { name: "About", href: "/#about" },
-  { name: "Courses", href: "/#courses" },
-  { name: "Franchise", href: "/#franchise" },
-  { name: "Gallery", href: "/#gallery" },
+  { name: "About us", href: "/#about" },
+  { name: "Our programs", href: "/#courses" },
+  { name: "Teacher training programs", href: "/#teacher-training" },
+  { name: "Franchisee", href: "/#franchise" },
   { name: "Contact", href: "/#contact" },
 ];
 
@@ -30,7 +30,10 @@ export default function Navbar() {
   return (
     <>
       {/* Utility Bar */}
-      <div className="fixed top-0 left-0 right-0 z-[60] bg-primary-deep text-white/80 py-2 px-6 hidden md:block">
+      <div className={cn(
+        "fixed top-0 left-0 right-0 z-[60] bg-primary-deep text-white/80 py-2 px-6 hidden md:block transition-transform duration-500",
+        scrolled ? "-translate-y-full" : "translate-y-0"
+      )}>
         <div className="max-w-7xl mx-auto flex justify-between items-center text-[10px] font-bold tracking-[0.2em] uppercase">
           <div className="flex gap-6">
             <span className="flex items-center gap-2">
@@ -56,23 +59,27 @@ export default function Navbar() {
         )}
       >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative w-16 h-12 overflow-hidden rounded-xl transition-transform duration-500 group-hover:scale-105">
+        <Link href="/" className="flex items-center gap-4 group">
+          <div className={cn(
+            "relative overflow-hidden rounded-2xl transition-all duration-500 group-hover:scale-105 shadow-md",
+            scrolled ? "w-16 h-12" : "w-20 h-16 md:w-28 md:h-20"
+          )}>
             <Image
               src="/logo.jpeg"
               alt="Pelican Academy Logo"
               fill
-              className="object-contain"
+              priority
+              className="object-cover"
             />
           </div>
           <div className="flex flex-col">
             <span className={cn(
-              "font-poppins font-bold text-xl leading-tight tracking-tight transition-colors duration-300",
-              scrolled ? "text-white" : "text-primary-deep"
+              "font-poppins font-bold leading-none tracking-tighter transition-all duration-500",
+              scrolled ? "text-xl text-white" : "text-3xl md:text-4xl text-primary-deep"
             )}>PELICAN</span>
             <span className={cn(
-              "font-inter text-[10px] font-bold tracking-[0.2em] uppercase -mt-0.5 transition-colors duration-300",
-              scrolled ? "text-accent" : "text-primary/60"
+              "font-inter font-black tracking-[0.3em] uppercase transition-all duration-500",
+              scrolled ? "text-[8px] text-accent" : "text-xs md:text-sm text-primary/80"
             )}>Academy</span>
           </div>
         </Link>

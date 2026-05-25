@@ -69,11 +69,11 @@ export default function Footer() {
             </h4>
             <ul className="space-y-5">
               {[
-                { name: "About Academy", href: "/#about" },
-                { name: "Our Curriculum", href: "/#courses" },
-                { name: "Franchise Inquiry", href: "/#franchise" },
-                { name: "Academy Gallery", href: "/#gallery" },
-                { name: "Admissions", href: "/#contact" }
+                { name: "About us", href: "/#about" },
+                { name: "Our programs", href: "/#courses" },
+                { name: "Teacher training programs", href: "/#teacher-training" },
+                { name: "Franchisee", href: "/#franchise" },
+                { name: "Contact", href: "/#contact" }
               ].map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="text-white/50 hover:text-accent transition-colors text-lg font-inter flex items-center group">
@@ -107,7 +107,7 @@ export default function Footer() {
             <ul className="space-y-8 text-white/50 text-lg font-inter">
               <li className="flex gap-4">
                 <MapPin size={22} className="text-accent shrink-0" />
-                <span className="leading-relaxed">Near Parashakti Hospital, <br />Singaperumalkoil, <br />TN 603204</span>
+                <span className="leading-relaxed">Mahindra World City, <br />Chengalpattu, <br />Tamil Nadu</span>
               </li>
               <li className="flex items-center gap-4">
                 <Phone size={22} className="text-accent shrink-0" />

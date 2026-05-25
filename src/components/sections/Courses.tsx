@@ -9,14 +9,14 @@ import {
 const courses = [
   {
     title: "Abacus Program",
-    description: "A scientifically designed learning method that strengthens mathematical abilities and brain development.",
-    details: "The course consists of 5 progressive levels, enabling students to gradually master concepts with confidence and accuracy. It uses the physical abacus to build mental calculation skills.",
+    description: "Abacus program is a scientifically designed learning method that strengthens children’s mathematical abilities and overall brain development.",
+    details: "The course consists of 5 progressive levels, enabling students to gradually master concepts with confidence and accuracy.",
     benefits: [
       "Enhances memory power and concentration",
       "Improves calculation speed and mental accuracy",
-      "Develops visualization and analytical thinking",
-      "Strengthens logical reasoning",
-      "Builds confidence in mental math"
+      "Develops visualization and analytical thinking skills",
+      "Strengthens logical reasoning and problem-solving abilities",
+      "Builds confidence in performing mental math"
     ],
     ageGroup: "5 - 14 Years",
     icon: Calculator,
@@ -24,14 +24,14 @@ const courses = [
   },
   {
     title: "Vedic Maths",
-    description: "An innovative and systematic approach to mathematics that simplifies complex calculations.",
-    details: "Enables students to solve problems with greater speed, accuracy, and confidence using powerful mental techniques and logical methods from ancient Indian sutras.",
+    description: "Vedic Maths is an innovative and systematic approach to mathematics that simplifies complex calculations through powerful mental techniques and logical methods.",
+    details: "It enables students to solve problems with greater speed, accuracy, and confidence while developing a strong foundation in mathematics.",
     benefits: [
       "Enhances calculation speed and numerical accuracy",
-      "Strengthens analytical thinking and problem-solving",
-      "Encourages mental math without calculators",
+      "Strengthens analytical thinking and problem-solving abilities",
+      "Encourages quick mental calculations without reliance on calculators",
       "Develops logical reasoning and cognitive skills",
-      "Makes mathematics engaging and interactive"
+      "Makes mathematics engaging, interactive, and easy to understand"
     ],
     ageGroup: "10+ Years",
     icon: Zap,
@@ -39,14 +39,14 @@ const courses = [
   },
   {
     title: "Jolly Phonics",
-    description: "A multi-sensory approach to teaching reading and writing through letter sounds.",
-    details: "Combines actions, stories, songs, and interactive activities to help young learners develop strong communication and literacy skills effectively.",
+    description: "Jolly Phonics is a fun, engaging, and multi-sensory approach to teaching children how to read and write through letter sounds.",
+    details: "It helps young learners develop strong communication and literacy skills by combining actions, stories, songs, and interactive activities for effective learning.",
     benefits: [
       "Develops strong reading and pronunciation skills",
-      "Improves spelling and word recognition",
-      "Enhances listening, speaking, and communication",
-      "Builds strong foundation in English",
-      "Strengthens vocabulary and comprehension"
+      "Improves spelling and word recognition abilities",
+      "Enhances listening, speaking, and communication skills",
+      "Builds a strong foundation in English language learning",
+      "Strengths vocabulary and comprehension skills"
     ],
     ageGroup: "4 - 7 Years",
     icon: Brain,
@@ -54,14 +54,16 @@ const courses = [
   },
   {
     title: "English Grammar",
-    description: "Essential component of language development for clear and confident communication.",
-    details: "Enhances a child's ability to read, write, speak, and comprehend English effectively, supporting both academic and personal growth.",
+    description: "English Grammar is an essential component of language development that enables students to communicate with clarity, confidence, and accuracy.",
+    details: "A strong foundation in grammar enhances a child’s ability to read, write, speak, and comprehend English effectively, supporting both academic and personal growth.",
     benefits: [
-      "Enhances spoken and written communication",
-      "Develops strong sentence construction",
-      "Improves reading comprehension and vocabulary",
-      "Encourages clear expression of thoughts",
-      "Builds confidence in public communication"
+      "Enhances spoken and written communication with accuracy and confidence",
+      "Develops strong sentence construction and language proficiency",
+      "Improves reading comprehension, vocabulary and creative writing skills",
+      "Encourages clear expression of thoughts and ideas in a structured manner",
+      "Builds confidence in classroom interaction and public communication",
+      "Provides a strong linguistic foundation for higher education and competitive examinations",
+      "Encourages critical thinking and effective communication skills for lifelong learning"
     ],
     ageGroup: "7+ Years",
     icon: BookOpen,
@@ -69,14 +71,14 @@ const courses = [
   },
   {
     title: "Handwriting Improvement",
-    description: "Develop neat, clear, and well-structured handwriting through guided practice.",
-    details: "Focuses on proper stroke formation, spacing, and effective writing techniques to make writing more organized and easy to read.",
+    description: "The Handwriting Improvement Course is designed to help children develop neat, clear, and well-structured handwriting through guided practice, proper stroke formation, and effective writing techniques.",
+    details: "The Handwriting Improvement Course is designed to help children develop neat, clear, and well-structured handwriting through guided practice, proper stroke formation, and effective writing techniques.",
     benefits: [
-      "Improves clarity, neatness, and consistency",
-      "Enhances letter formation and alignment",
-      "Increases writing speed with accuracy",
-      "Boosts confidence in exams",
-      "Makes writing organized and attractive"
+      "Improves handwriting clarity, neatness, and consistency",
+      "Enhances letter formation, spacing, and alignment",
+      "Increases writing speed with improved accuracy",
+      "Boosts confidence in classroom writing and examinations",
+      "Makes writing more organized, attractive, and easy to read"
     ],
     ageGroup: "6+ Years",
     icon: PenTool,
@@ -84,14 +86,14 @@ const courses = [
   },
   {
     title: "Calligraphy",
-    description: "The art of beautiful, artistic, and stylish writing using creative design techniques.",
-    details: "Focuses on creating elegant letters and creative handwriting patterns using proper strokes, spacing, and modern/traditional designs.",
+    description: "Calligraphy is the art of beautiful, artistic, and stylish writing.",
+    details: "It focuses on creating elegant letters and creative handwriting patterns using proper strokes, spacing, and design techniques.",
     benefits: [
-      "Learn innovative writing styles",
-      "Develop artistic presentation skills",
-      "Explore modern and traditional patterns",
-      "Improve creativity and aesthetic sense",
-      "Gain confidence in creating decorative content"
+      "Learn innovative writing styles and creative lettering techniques",
+      "Develop artistic presentation skills through stylish and decorative writing",
+      "Explore modern and traditional calligraphy patterns with creative designs",
+      "Improve creativity, imagination, and aesthetic sense in writing",
+      "Gain confidence in creating attractive certificates, titles, and decorative content"
     ],
     ageGroup: "10+ Years",
     icon: Type,
@@ -172,7 +174,7 @@ export default function Courses() {
             </div>
             <div>
               <h4 className="text-xl font-bold text-primary-deep">Drawing & Enrichment Activities</h4>
-              <p className="text-text-secondary text-sm">Fostering creativity, artistic expression, and holistic development.</p>
+              <p className="text-text-secondary text-sm">Drawing and other enrichment activities are also offered to students to foster creativity, artistic expression, confidence, and overall holistic development.</p>
             </div>
           </div>
           <a href="#contact" className="btn-primary whitespace-nowrap">Enquire Now</a>

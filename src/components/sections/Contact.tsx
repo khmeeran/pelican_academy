@@ -74,12 +74,12 @@ export default function Contact() {
                     </div>
                     <div className="flex-1">
                       <p className="text-xs font-bold text-white/40 uppercase tracking-[0.2em] mb-2">Our Campus</p>
-                      <p className="text-2xl font-bold text-white leading-tight mb-8">Singaperumalkoil, <br />Chengalpattu</p>
+                      <p className="text-2xl font-bold text-white leading-tight mb-8">Mahindra World City, <br />Chengalpattu</p>
                       
                       {/* Interactive Map Embed */}
                       <div className="w-full h-64 rounded-3xl overflow-hidden border border-white/10 shadow-2xl group relative">
                         <iframe
-                          src="https://maps.google.com/maps?q=Pelican%20Academy%20Singaperumalkoil&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                          src="https://maps.google.com/maps?q=Mahindra%20World%20City,%20Chengalpattu&t=&z=14&ie=UTF8&iwloc=&output=embed"
                           width="100%"
                           height="100%"
                           style={{ border: 0, filter: 'grayscale(1) invert(0.9) contrast(1.2)' }}

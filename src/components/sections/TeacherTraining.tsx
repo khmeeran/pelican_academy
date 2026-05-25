@@ -6,8 +6,8 @@ import Image from "next/image";
 
 const trainingFeatures = [
   {
-    title: "All-Course Coverage",
-    desc: "Professional Teacher Training Program available for all our specialized courses.",
+    title: "All-Course Program",
+    desc: "Professional Teacher Training Program available for all courses.",
     icon: BookOpen
   },
   {
@@ -16,13 +16,18 @@ const trainingFeatures = [
     icon: Award
   },
   {
-    title: "Practical Methodology",
-    desc: "Focus on effective teaching methodologies and classroom management techniques.",
+    title: "Practical Training",
+    desc: "Practical training focused on effective teaching methodologies and classroom management techniques.",
     icon: Users
   },
   {
-    title: "Support & Certification",
-    desc: "Personalized assistance and completion certificate awarded upon successful training.",
+    title: "Personalized Support",
+    desc: "Personalized support and expert assistance throughout the training program.",
+    icon: Star
+  },
+  {
+    title: "Certification",
+    desc: "Completion Certificate awarded upon successful completion of the training program.",
     icon: Briefcase
   }
 ];

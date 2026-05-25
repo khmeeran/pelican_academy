@@ -99,6 +99,7 @@ export default function Hero() {
                 alt="Children Learning at Pelican Academy"
                 fill
                 priority
+                loading="eager"
                 className="object-cover transition-transform duration-[2s] group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-primary-deep/10 mix-blend-multiply transition-opacity duration-700 group-hover:opacity-0" />

@@ -8,10 +8,10 @@ const galleryImages = [
   { url: "/images/pexels-shootsaga-31447794.jpg", title: "Interactive Learning" },
   { url: "/images/pexels-mary-taylor-5896479.jpg", title: "Creative Art" },
   { url: "/images/pexels-rdne-8500618.jpg", title: "Skill Development" },
-  { url: "/images/pexels-tara-winstead-6693302.jpg", title: "Focused Study" },
+  { url: "/images/pexels-tara-winstead-6693302.jpg", title: "Focused Study", priority: true },
   { url: "/images/pexels-tima-miroshnichenko-5427868.jpg", title: "Future Leaders" },
   { url: "/images/pexels-shootsaga-30889597.jpg", title: "Global Standards" },
-  { url: "/images/pexels-aminulislambulbul-32628278.jpg", title: "Academic Excellence" },
+  { url: "/images/pexels-aminulislambulbul-32628278.jpg", title: "Academic Excellence", priority: true },
   { url: "/images/pexels-irrabagon-37358629.jpg", title: "Young Achievers" },
   { url: "/images/pexels-swastikarora-18012459.jpg", title: "Growth & Innovation" }
 ];
@@ -63,6 +63,8 @@ export default function Gallery() {
                 src={image.url}
                 alt={image.title}
                 fill
+                priority={(image as any).priority}
+                loading={(image as any).priority ? "eager" : "lazy"}
                 className="object-cover transition-transform duration-1000 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-deep/90 via-primary-deep/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end p-12">

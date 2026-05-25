@@ -10,38 +10,38 @@ const franchiseBenefits = [
     icon: Landmark,
   },
   {
-    title: "Low Investment – High Growth",
+    title: "Low Investment – High Growth Opportunity",
     desc: "Start your educational venture with an affordable franchise model and excellent earning potential.",
     icon: TrendingUp,
   },
   {
-    title: "Complete Support",
-    desc: "End-to-end academic and operational support, from study materials to activity planning.",
+    title: "Complete Academic & Operational Support",
+    desc: "From study materials to assessments and activity planning, we provide end-to-end support.",
     icon: ShieldCheck,
   },
   {
-    title: "Skill-Based Programs",
-    desc: "Offer Abacus, Jolly Phonics, Vedic Maths, Handwriting Improvement and English Grammar.",
+    title: "Strong Curriculum with Skill-Based Programs",
+    desc: "Offer in-demand courses like Abacus, Jolly Phonics, Vedic Maths, Handwriting Improvement and English Grammar.",
     icon: Award,
   },
   {
-    title: "Continuous Expert Training",
+    title: "Continuous Training & Expert Guidance",
     desc: "Receive professional mentoring, teacher training, and regular academic assistance.",
     icon: GraduationCap,
   },
   {
-    title: "Smart Marketing Assistance",
+    title: "Smart Marketing & Branding Assistance",
     desc: "Build a strong presence in your locality with our promotional and branding support.",
     icon: Megaphone,
   },
   {
-    title: "Child-Centric Learning",
-    desc: "Programs designed to enhance confidence, creativity, concentration, and communication.",
+    title: "Child-Centric Learning Methodology",
+    desc: "Our programs are designed to enhance confidence, creativity, concentration, and communication skills.",
     icon: Heart,
   },
   {
     title: "Easy to Manage & Expand",
-    desc: "A flexible and professionally structured model suitable for passionate educators and entrepreneurs.",
+    desc: "A flexible and professionally structured franchise model suitable for passionate educators and entrepreneurs.",
     icon: LayoutGrid,
   }
 ];
