@@ -19,6 +19,14 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  const handleLogoClick = (e: React.MouseEvent) => {
+    if (window.location.pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.history.pushState(null, '', '/');
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -59,7 +67,7 @@ export default function Navbar() {
         )}
       >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/#home" className="flex items-center gap-4 group">
+        <Link href="/#home" onClick={handleLogoClick} className="flex items-center gap-4 group">
           <div className={cn(
             "relative overflow-hidden rounded-2xl transition-all duration-500 group-hover:scale-105 shadow-md",
             scrolled ? "w-16 h-12" : "w-20 h-16 md:w-28 md:h-20"
