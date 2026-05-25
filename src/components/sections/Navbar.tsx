@@ -69,7 +69,7 @@ export default function Navbar() {
             scrolled ? "w-16 h-12" : "w-32 h-24 md:w-48 md:h-36"
           )}>
             <Image
-              src={scrolled ? "/pelican-logo-official-white.png" : "/pelican-logo-green.png"}
+              src={scrolled ? "/pelican-logo-official-white.png" : "/pelican-logo-official-green.png"}
               alt="Pelican Academy Logo"
               fill
               priority
