@@ -46,17 +46,17 @@ export default function Hero() {
           </motion.div>
           
           <h1 className="text-6xl md:text-8xl font-poppins font-bold leading-[1.05] mb-8 tracking-tight text-primary-deep">
-            Unleash Your <br />
-            <span className="text-accent italic font-medium">Child&apos;s Genius</span>
+            Give Your Child the <br />
+            <span className="text-accent italic font-medium">Academic Advantage</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-text-secondary mb-12 max-w-xl leading-relaxed font-inter font-medium">
-            Advanced skill development programs including Abacus, Vedic Maths, and Jolly Phonics, designed to boost concentration, memory, and cognitive skills.
+            Equip your child with lightning-fast calculation, flawless communication, and peak cognitive focus—essential skills that traditional schooling often misses.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6">
             <a href="#contact" className="btn-primary flex items-center justify-center gap-3 text-lg group">
-              Book Free Demo
+              Book Free Assessment
               <ArrowRight size={20} className="transition-transform duration-300 group-hover:translate-x-1" />
             </a>
             <a href="#courses" className="btn-secondary flex items-center justify-center gap-3 text-lg">

@@ -124,7 +124,7 @@ export default function Courses() {
             transition={{ delay: 0.1 }}
             className="text-5xl md:text-6xl font-poppins font-bold text-primary-deep mb-8"
           >
-            Nurturing <span className="text-accent italic font-medium">Holistic Development</span>
+            Skills That <span className="text-accent italic font-medium">Set Them Apart</span>
           </motion.h3>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -133,7 +133,7 @@ export default function Courses() {
             transition={{ delay: 0.2 }}
             className="text-text-secondary max-w-2xl mx-auto text-lg font-inter"
           >
-            Scientifically designed programs to enhance children&apos;s cognitive, linguistic, and artistic abilities through engaging learning methods.
+            Our specialized curriculum goes beyond the textbook, building the critical thinking, speed, and confidence your child needs to excel in competitive environments.
           </motion.p>
         </div>
 

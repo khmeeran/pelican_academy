@@ -50,11 +50,11 @@ export default function Contact() {
                   <span className="text-xs font-bold text-accent uppercase tracking-[0.2em]">Admissions Open</span>
                 </div>
                 <h2 className="text-6xl md:text-7xl font-poppins font-bold text-white mb-10 leading-tight">
-                  Secure Your Child&apos;s <br />
+                  Invest in Their <br />
                   <span className="text-accent italic font-medium">Future Today</span>
                 </h2>
                 <p className="text-xl text-white/70 leading-relaxed mb-16 font-inter max-w-lg">
-                  Join a community of forward-thinking parents and brilliant young minds. This is the school parents aspire to join.
+                  Don&apos;t let your child fall behind. Join hundreds of smart parents who have already given their children the Pelican Academy advantage.
                 </p>
 
                 <div className="space-y-10">

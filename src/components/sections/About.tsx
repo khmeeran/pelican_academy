@@ -72,7 +72,7 @@ export default function About() {
               <span className="text-accent italic font-medium">Brain Engineering</span>
             </h2>
             <p className="text-lg text-text-secondary leading-relaxed mb-10 font-inter">
-              Pelican Academy revolutionizes how children process information. By translating numbers into visual bead movements, we eliminate math phobia and build a foundation of absolute numerical confidence and mental agility.
+              Pelican Academy is more than just a tuition center—it&apos;s a launchpad for future leaders. Our proven methodologies transform how children process information, turning academic struggle into self-assured mastery and giving them the critical advantage they need to lead.
             </p>
 
             <div className="space-y-6">
