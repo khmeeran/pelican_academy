@@ -64,7 +64,7 @@ export default function RootLayout({
     "@type": "EducationalOrganization",
     "name": "Pelican Academy",
     "url": "https://pelicanacademy.in",
-    "logo": "https://pelicanacademy.in/logo-transparent.png",
+    "logo": "https://pelicanacademy.in/pelican-white-transparent-logo.png",
     "description": "ISO 9001:2015 Certified Institution specializing in Abacus, Vedic Math, and Phonics.",
     "address": {
       "@type": "PostalAddress",
@@ -83,8 +83,8 @@ export default function RootLayout({
       "availableLanguage": ["English", "Tamil"]
     },
     "sameAs": [
-      "https://www.facebook.com/pelicanacademychengalpattu",
-      "https://www.instagram.com/pelican_academy_chengalpattu"
+      "https://www.facebook.com/share/18qNbCKuyY/",
+      "https://www.instagram.com/pelicanacademy.21?igsh=MXE1cm56ZGpnNzRv"
     ]
   };
 
