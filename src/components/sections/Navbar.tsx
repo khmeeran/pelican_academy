@@ -66,10 +66,10 @@ export default function Navbar() {
         <Link href="/#home" onClick={handleLogoClick} className="flex items-center gap-4 group shrink-0">
           <div className={cn(
             "relative transition-all duration-700 ease-[0.16,1,0.3,1] group-hover:scale-105",
-            scrolled ? "w-16 h-12 brightness-100" : "w-32 h-24 md:w-48 md:h-36 brightness-0"
+            scrolled ? "w-16 h-12" : "w-32 h-24 md:w-48 md:h-36"
           )}>
             <Image
-              src="/pelican-logo-official-white.png"
+              src={scrolled ? "/pelican-logo-official-white.png" : "/pelican-logo-green.png"}
               alt="Pelican Academy Logo"
               fill
               priority
