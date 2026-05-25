@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -108,15 +108,15 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="hidden md:flex items-center">
+        <div className="hidden md:flex items-center ml-10 xl:ml-16">
           <a
-            href="tel:+919994048827"
+            href="/#contact"
             className={cn(
               "flex items-center gap-2 px-7 py-3.5 rounded-full text-xs xl:text-sm font-black tracking-widest transition-all duration-300 shadow-xl hover:scale-105 active:scale-95 whitespace-nowrap",
               scrolled ? "bg-accent text-primary-deep" : "bg-primary-deep text-white"
             )}
           >
-            <Phone size={16} />
+            <ArrowRight size={16} />
             <span>ENROLL NOW</span>
           </a>
         </div>
