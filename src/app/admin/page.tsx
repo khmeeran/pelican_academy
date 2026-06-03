@@ -18,15 +18,25 @@ export default function AdminLoginPage() {
     }
   }, [router])
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setError(null)
 
-    if (id === 'admin' && password === 'admin123') {
-      sessionStorage.setItem('isAdmin', 'true')
-      router.push('/admin/dashboard')
-    } else {
-      setError('Invalid ID or Password')
+    try {
+      const res = await fetch('/api/admin/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id, password })
+      })
+
+      if (res.ok) {
+        sessionStorage.setItem('isAdmin', 'true')
+        router.push('/admin/dashboard')
+      } else {
+        setError('Invalid ID or Password')
+      }
+    } catch (err) {
+      setError('An error occurred. Please try again.')
     }
   }
 
