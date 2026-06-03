@@ -1,0 +1,11 @@
+[
+  { "url": "/images/pexels-shootsaga-31447794.jpg", "title": "Interactive Learning" },
+  { "url": "/images/pexels-mary-taylor-5896479.jpg", "title": "Creative Art" },
+  { "url": "/images/pexels-rdne-8500618.jpg", "title": "Skill Development" },
+  { "url": "/images/pexels-tara-winstead-6693302.jpg", "title": "Focused Study", "priority": true },
+  { "url": "/images/pexels-tima-miroshnichenko-5427868.jpg", "title": "Future Leaders" },
+  { "url": "/images/pexels-shootsaga-30889597.jpg", "title": "Global Standards" },
+  { "url": "/images/pexels-aminulislambulbul-32628278.jpg", "title": "Academic Excellence", "priority": true },
+  { "url": "/images/pexels-irrabagon-37358629.jpg", "title": "Young Achievers" },
+  { "url": "/images/pexels-swastikarora-18012459.jpg", "title": "Growth & Innovation" }
+]

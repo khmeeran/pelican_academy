@@ -4,7 +4,21 @@ import { motion } from "framer-motion";
 import { ArrowRight, Star, ShieldCheck, Trophy } from "lucide-react";
 import Image from "next/image";
 
+import { useState, useEffect } from "react";
+import updatesInitialData from "@/data/updates.json";
+
 export default function Hero() {
+  const [updates, setUpdates] = useState(updatesInitialData);
+
+  useEffect(() => {
+    const localUpdates = localStorage.getItem('local_updates');
+    if (localUpdates) {
+      setTimeout(() => {
+        setUpdates(JSON.parse(localUpdates));
+      }, 0);
+    }
+  }, []);
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background-warm pt-48 pb-20 px-6">
       {/* Cinematic Background Elements */}
@@ -42,7 +56,7 @@ export default function Hero() {
             className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm border border-primary/10 px-5 py-2.5 rounded-full mb-8 shadow-sm"
           >
             <span className="flex h-2 w-2 rounded-full bg-accent animate-pulse" />
-            <span className="text-xs font-bold text-primary uppercase tracking-[0.2em]">Admissions Open 2026-27</span>
+            <span className="text-xs font-bold text-primary uppercase tracking-[0.2em]">{updates.announcement}</span>
           </motion.div>
           
           <h1 className="text-6xl md:text-8xl font-poppins font-bold leading-[1.05] mb-8 tracking-tight text-primary-deep">
@@ -51,7 +65,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-xl md:text-2xl text-text-secondary mb-12 max-w-xl leading-relaxed font-inter font-medium">
-            Nurturing the next generation of global leaders through a world-class curriculum of cognitive, mathematical, and linguistic enrichment.
+            {updates.heroSubtitle}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6">

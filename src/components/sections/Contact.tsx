@@ -4,9 +4,11 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Phone, MapPin, CheckCircle2, AlertCircle, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import contentData from "@/data/content.json";
 
 export default function Contact() {
   const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const { contact } = contentData;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -59,11 +61,11 @@ export default function Contact() {
                   <span className="text-xs font-bold text-accent uppercase tracking-[0.2em]">Admissions Open</span>
                 </div>
                 <h2 className="text-6xl md:text-7xl font-poppins font-bold text-white mb-10 leading-tight">
-                  Invest in Their <br />
-                  <span className="text-accent italic font-medium">Future Today</span>
+                  {contact.title} <br />
+                  <span className="text-accent italic font-medium">{contact.titleHighlight}</span>
                 </h2>
                 <p className="text-xl text-white/70 leading-relaxed mb-16 font-inter max-w-lg">
-                  Don&apos;t let your child fall behind. Join hundreds of smart parents who have already given their children the Pelican Academy advantage.
+                  {contact.subtitle}
                 </p>
 
                 <div className="space-y-10">
@@ -73,7 +75,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="text-xs font-bold text-white/40 uppercase tracking-[0.2em] mb-2">Direct Inquiry</p>
-                      <a href="tel:+919994048827" className="text-2xl font-bold text-white hover:text-accent transition-colors">+91 9994048827</a>
+                      <a href={`tel:${contact.phone.replace(/\s/g, '')}`} className="text-2xl font-bold text-white hover:text-accent transition-colors">{contact.phone}</a>
                     </div>
                   </div>
 
@@ -83,7 +85,7 @@ export default function Contact() {
                     </div>
                     <div className="flex-1">
                       <p className="text-xs font-bold text-white/40 uppercase tracking-[0.2em] mb-2">Our Campus</p>
-                      <p className="text-2xl font-bold text-white leading-tight mb-8">Mahindra World City, <br />Chengalpattu</p>
+                      <p className="text-2xl font-bold text-white leading-tight mb-8" dangerouslySetInnerHTML={{ __html: contact.address.replace(', ', ', <br />') }}></p>
                       
                       {/* Interactive Map Embed */}
                       <div className="w-full h-64 rounded-3xl overflow-hidden border border-white/10 shadow-2xl group relative">

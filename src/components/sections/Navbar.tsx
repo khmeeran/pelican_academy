@@ -109,7 +109,7 @@ export default function Navbar() {
         </div>
 
         <div className="hidden md:flex items-center ml-10 xl:ml-16">
-          <a
+          <Link
             href="/#contact"
             className={cn(
               "flex items-center gap-2 px-7 py-3.5 rounded-full text-xs xl:text-sm font-black tracking-widest transition-all duration-300 shadow-xl hover:scale-105 active:scale-95 whitespace-nowrap",
@@ -118,7 +118,7 @@ export default function Navbar() {
           >
             <ArrowRight size={16} />
             <span>ENROLL NOW</span>
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Toggle */}

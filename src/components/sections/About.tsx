@@ -22,7 +22,11 @@ const values = [
   }
 ];
 
+import contentData from "@/data/content.json";
+
 export default function About() {
+  const { about } = contentData;
+
   return (
     <section id="about" className="section-spacing bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
@@ -73,22 +77,16 @@ export default function About() {
             transition={{ duration: 1 }}
           >
             <div className="inline-block bg-primary/5 px-4 py-2 rounded-full mb-6">
-              <span className="text-xs font-bold text-primary uppercase tracking-[0.2em]">About Us</span>
+              <span className="text-xs font-bold text-primary uppercase tracking-[0.2em]">{about.badge}</span>
             </div>
             <h2 className="text-5xl font-poppins font-bold text-primary-deep mb-8 leading-tight">
-              Crafting Excellence <br />
-              <span className="text-accent italic font-medium">Since 2021</span>
+              {about.title} <br />
+              <span className="text-accent italic font-medium">{about.titleHighlight}</span>
             </h2>
             <div className="space-y-6 text-lg text-text-secondary leading-relaxed font-inter">
-              <p>
-                Established in 2021, PELICAN Academy has been dedicated to providing quality extra curricular education for children. We provide a wide range of extra curricular activities that help children improve their academic, creative, and communication skills.
-              </p>
-              <p>
-                Our programs are designed to make learning enjoyable, interactive, and activity-based. Our academy provides a friendly and supportive environment for students of different age groups.
-              </p>
-              <p>
-                We believe every child has unique talents, and we help them discover and strengthen their abilities. Experienced and dedicated trainers guide students with personal attention and care.
-              </p>
+              {about.paragraphs.map((para, index) => (
+                <p key={index}>{para}</p>
+              ))}
             </div>
           </motion.div>
         </div>
