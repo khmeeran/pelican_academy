@@ -14,16 +14,7 @@ interface GalleryImage {
 }
 
 export default function Gallery() {
-  const [galleryImages, setGalleryImages] = useState<GalleryImage[]>(galleryInitialData as GalleryImage[]);
-
-  useEffect(() => {
-    const localGallery = localStorage.getItem('local_gallery');
-    if (localGallery) {
-      setTimeout(() => {
-        setGalleryImages(JSON.parse(localGallery));
-      }, 0);
-    }
-  }, []);
+  const galleryImages: GalleryImage[] = galleryInitialData as GalleryImage[];
 
   return (
     <section id="gallery" className="section-spacing bg-primary/5">

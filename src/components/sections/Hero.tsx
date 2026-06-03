@@ -8,16 +8,7 @@ import { useState, useEffect } from "react";
 import updatesInitialData from "@/data/updates.json";
 
 export default function Hero() {
-  const [updates, setUpdates] = useState(updatesInitialData);
-
-  useEffect(() => {
-    const localUpdates = localStorage.getItem('local_updates');
-    if (localUpdates) {
-      setTimeout(() => {
-        setUpdates(JSON.parse(localUpdates));
-      }, 0);
-    }
-  }, []);
+  const updates = updatesInitialData;
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background-warm pt-48 pb-20 px-6">

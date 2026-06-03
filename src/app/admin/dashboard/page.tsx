@@ -13,6 +13,7 @@ interface GalleryItem {
   url: string
   title: string
   priority?: boolean
+  preview?: string // Temporary local preview URL
 }
 
 interface SiteUpdates {
@@ -68,10 +69,15 @@ export default function AdminDashboard() {
   }, [router, fetchData])
 
   async function updateFile(path: string, fileContent: unknown) {
+    // Strip preview URLs before saving to JSON
+    const contentToSave = Array.isArray(fileContent) 
+      ? fileContent.map(({ preview, ...rest }) => rest)
+      : fileContent;
+
     const res = await fetch('/api/admin/save', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ path, content: fileContent })
+      body: JSON.stringify({ path, content: contentToSave })
     })
 
     if (!res.ok) {
@@ -284,8 +290,8 @@ export default function AdminDashboard() {
                   <div className="space-y-4">
                     <div>
                       <div className="w-full h-32 rounded-xl bg-white border border-primary/5 flex items-center justify-center overflow-hidden relative mb-3">
-                        {item.url ? (
-                          <Image src={item.url} alt="Preview" fill className="object-cover" unoptimized />
+                        {(item.preview || item.url) ? (
+                          <Image src={item.preview || item.url} alt="Preview" fill className="object-cover" unoptimized />
                         ) : (
                           <ImageIcon size={32} className="text-primary/20" />
                         )}
@@ -312,26 +318,37 @@ export default function AdminDashboard() {
                             onChange={async (e) => {
                               const file = e.target.files?.[0];
                               if (!file) return;
+                              
+                              // Create immediate local preview
+                              const localPreviewUrl = URL.createObjectURL(file);
+                              const newGallery = [...gallery];
+                              newGallery[index].preview = localPreviewUrl;
+                              setGallery(newGallery);
+
                               const reader = new FileReader();
                               reader.onload = async (event) => {
                                 const base64 = (event.target?.result as string).split(',')[1];
                                 const filename = `uploaded-${Date.now()}-${file.name.replace(/\s+/g, '-')}`;
                                 const path = `public/images/${filename}`;
                                 
-                                setStatus({ message: 'Uploading image...', type: 'info' });
+                                setStatus({ message: 'Uploading image to GitHub...', type: 'info' });
                                 try {
-                                  await fetch('/api/admin/save', {
+                                  const res = await fetch('/api/admin/save', {
                                     method: 'POST',
                                     headers: { 'Content-Type': 'application/json' },
                                     body: JSON.stringify({ path, content: base64, isBase64: true })
                                   });
                                   
-                                  const newGallery = [...gallery];
-                                  newGallery[index].url = `/images/${filename}`;
-                                  setGallery(newGallery);
-                                  setStatus({ message: 'Image uploaded successfully!', type: 'success' });
-                                } catch (err) {
-                                  setStatus({ message: 'Image upload failed.', type: 'error' });
+                                  const result = await res.json();
+                                  if (!res.ok) throw new Error(result.error);
+
+                                  const updatedGallery = [...gallery];
+                                  updatedGallery[index].url = `/images/${filename}`;
+                                  setGallery(updatedGallery);
+                                  
+                                  setStatus({ message: 'Image uploaded! Previewing local version until site redeploys.', type: 'success' });
+                                } catch (err: any) {
+                                  setStatus({ message: `Upload failed: ${err.message}`, type: 'error' });
                                 }
                               };
                               reader.readAsDataURL(file);
@@ -364,3 +381,4 @@ export default function AdminDashboard() {
     </div>
   )
 }
+

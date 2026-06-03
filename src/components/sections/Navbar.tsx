@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Menu, X, Phone, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
+import contentData from "@/data/content.json";
 
 const navLinks = [
   { name: "About us", href: "/#about" },
@@ -173,7 +174,7 @@ export default function Navbar() {
                 className="mt-auto"
               >
                 <a
-                  href="tel:+919994048827"
+                  href={`tel:${contentData.contact.phone.replace(/\s/g, '')}`}
                   className="flex items-center justify-center gap-3 bg-accent text-primary-deep px-8 py-5 rounded-2xl text-xl font-bold shadow-2xl"
                 >
                   <Phone size={24} />

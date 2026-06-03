@@ -61,8 +61,9 @@ export async function POST(req: Request) {
       }, { status: putRes.status });
     }
 
+    const responseData = await putRes.json();
     console.log(`[GitHub API] Success: ${path} updated.`);
-    return NextResponse.json({ success: true });
+    return NextResponse.json({ success: true, data: responseData });
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
